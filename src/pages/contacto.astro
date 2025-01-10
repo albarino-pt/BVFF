@@ -1,0 +1,126 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import {
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Card,
+  Media,
+  Modal,
+  Notification,
+  Pagination,
+  Tabs,
+  TabsList,
+  TabsTab,
+  TabsPanel,
+} from "accessible-astro-components";
+---
+
+<DefaultLayout title="Contactos">
+  <section class="mt-20">
+    <div class="container">
+      <h1>Contactos</h1>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="space-content container">
+      <p class="text-2xl">
+        Estamos aqui por si<br />Se precisar de entrar en contacto conosco
+        poderá encontrar aqui a maneira mais conveniente de o fazer
+      </p>
+      <p class="text-2xl">
+        Se for uma situação de emergência por favor ligue <a href="tel:112"
+          >112</a
+        >
+      </p>
+
+      <div>
+        <Tabs>
+          <TabsList>
+            <TabsTab id="tab-1" controls="panel-1" selected
+              >Contactos gerais</TabsTab
+            >
+            <TabsTab id="tab-2" controls="panel-2">Direção</TabsTab>
+            <TabsTab id="tab-3" controls="panel-3">Redes Sociais</TabsTab>
+          </TabsList>
+
+          <TabsPanel id="panel-1" labelledby="tab-1" selected>
+            <h4>Contactos gerais</h4>
+            <p>
+              Para marcação de transportes ou outro tipo de serviços ou
+              quaisquer duvidas nao exite em ligar
+            </p>
+            <a href="mailto:geral@bvff.com.pt">geral@bvff.com.pt</a>
+            <a href="tel:+351233402260">233 402 260</a>
+            <p class="mt-1">Também nos pode encontrar no nosso quartel.</p>
+            <h6 class="-mb-2">Horário de abertura ao público:</h6>
+            <p>
+              Segunda a Sexta<br />09:00 - 13:00 / 14:00 - 17:30 <br />Fins de
+              semana e feriados <br />Fechado
+            </p>
+
+            <div class="flex md:flex-row flex-col w-full gap-1">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.424829450443!2d-8.855966724316431!3d40.15439657156461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2237e90c683189%3A0x3bd0b515c271da9a!2sAssocia%C3%A7%C3%A3o%20Humanit%C3%A1ria%20Bombeiros%20Volunt%C3%A1rios%20da%20Figueira%20da%20Foz!5e1!3m2!1sen!2spt!4v1736393455538!5m2!1sen!2spt"
+                width="100%"
+                height="350"
+                style="border-radius: 10px; border: none; overflow: hidden;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2922.1396287266916!2d-8.81328811563207!3d40.06787800332207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22473a2bb0339d%3A0x9ddea45f2585800a!2sBombeiros%20Volunt%C3%A1rios%20da%20Figueira%20da%20Foz%20-%20Sec%C3%A7%C3%A3o%20do%20Pai%C3%A3o!5e1!3m2!1sen!2spt!4v1736515872366!5m2!1sen!2spt"
+                width="100%"
+                height="350"
+                style="border-radius: 10px; border: none; overflow: hidden;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </TabsPanel>
+          <TabsPanel id="panel-2" labelledby="tab-2">
+            <h4>Second Panel</h4>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <Media
+                class="rounded-lg"
+                src="https://images.unsplash.com/photo-1636819488537-a9b1ffb315ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+              />
+              <Media
+                class="rounded-lg"
+                src="https://images.unsplash.com/photo-1636819488537-a9b1ffb315ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+              />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Architecto quasi nobis optio? Qui in quo accusantium debitis
+              sapiente obcaecati magnam incidunt sit. Molestiae exercitationem
+              quibusdam quod veritatis laboriosam est tenetur. Lorem ipsum
+              dolor, sit amet consectetur adipisicing elit. Sed eveniet quidem
+              earum at nobis enim.
+            </p>
+            <a href="#">Tab to me!</a>
+          </TabsPanel>
+          <TabsPanel id="panel-3" labelledby="tab-3">
+            <h4>Third Panel</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur,
+              nulla! Sapiente saepe voluptate nemo in id aperiam tempore quo
+              unde, ipsum similique explicabo non maiores qui voluptates dolore
+              obcaecati. Atque voluptates similique ad ipsam nostrum quibusdam
+              doloremque cum porro, aperiam beatae voluptas dolore et neque
+              voluptate alias nesciunt blanditiis totam voluptatem
+              necessitatibus. Similique aliquid molestiae iusto nam nobis ut
+              aspernatur blanditiis provident iste corporis minima, quidem autem
+              nulla doloremque eaque a obcaecati! Nisi quod quam repellendus
+              facilis? Libero voluptas doloribus maxime, suscipit odio veritatis
+              optio nulla officia quos cum at ea hic numquam perferendis
+              molestiae! Aperiam quia veritatis earum tempora.
+            </p>
+            <a href="#">Tab to me!</a>
+          </TabsPanel>
+        </Tabs>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

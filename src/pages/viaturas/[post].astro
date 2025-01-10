@@ -1,0 +1,110 @@
+---
+import fs from "fs/promises";
+import path from "path";
+
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import { Breadcrumbs, BreadcrumbsItem } from "accessible-astro-components";
+
+export async function getStaticPaths() {
+  // Read the JSON file from the local filesystem
+  const filePath = path.resolve("./src/content/viaturas.json");
+  const fileContent = await fs.readFile(filePath, "utf-8");
+  const data = JSON.parse(fileContent);
+
+  return data.map((post) => {
+    return {
+      params: { post: post.title.replaceAll(" ", "-").toLowerCase() },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+---
+
+<DefaultLayout title={post.title} description={post.body} url={post.title}>
+  <div class="container">
+    <div class="mt-16">
+      <Breadcrumbs>
+        <BreadcrumbsItem href="/" label="Início" />
+        <BreadcrumbsItem href="/viaturas" label="Viaturas" />
+        <BreadcrumbsItem currentPage={true} label={post.title} />
+      </Breadcrumbs>
+    </div>
+  </div>
+  <section class="my-12">
+    <div class="container">
+      <h1>{post.title}</h1>
+      <div class="spaced">
+        {post.image1 ? (
+          <img
+            src={post.image}
+            alt={post.title}
+            class="post-image"
+            decoding="async"
+            loading="lazy"
+          />
+          <img
+            src={post.image1}
+            alt={post.title}
+            class="post-image"
+            decoding="async"
+            loading="lazy"
+          />
+        ) : (
+          <img
+            src={post.image}
+            alt={post.title}
+            class="post-image"
+            decoding="async"
+            loading="lazy"
+            style={{ width: "100%", height: "100%" }}
+          />
+        )}
+      </div>
+
+      <p>Atualizado a {post.updated}</p>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="container">
+      <p class="text-2xl">{post.body}</p>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style lang="scss">
+  img {
+    width: fit-content; /* adjust the width of the div */
+    height: auto; /* adjust the height of the div */
+    overflow: hidden;
+    aspect-ratio: auto;
+  }
+  .spaced {
+    display: flex;
+    gap: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4rem;
+
+    @media (min-width: 550px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+
+    @media (min-width: 950px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .post-image {
+    width: 100%;
+    // max-width: 600px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+</style>

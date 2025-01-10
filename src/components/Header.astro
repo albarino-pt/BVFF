@@ -10,12 +10,25 @@ import { Icon } from "astro-icon/components";
     <li class="menu-item">
       <a href="/">Início</a>
     </li>
+
     <li class="menu-item">
-      <a href="/blog/">Blog</a>
+      <a href="/socio">Faça-se Sócio</a>
+    </li>
+    <li class="menu-item">
+      <a href="/contacto">Contacte-nos</a>
     </li>
     <li class="menu-item has-dropdown">
-      <button aria-haspopup="true" aria-expanded="false">Example Pages</button>
+      <button aria-haspopup="true" aria-expanded="false">Sobre nós</button>
       <ul class="dropdown-menu">
+        <li class="submenu-item">
+          <a href="/historia">Quem somos</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/organizacao">Organização</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/viaturas">Viaturas</a>
+        </li>
         <li class="submenu-item">
           <a href="/mdx-page/">MDX Page</a>
         </li>
@@ -27,19 +40,25 @@ import { Icon } from "astro-icon/components";
         </li>
       </ul>
     </li>
-    <li class="menu-item">
+
+    <li class="menu-item type-icon">
       <a
-        href="http://albarino.pt"
-        title="external link"
-        rel="external noopener noreferrer">External Link</a
+        href="https://www.facebook.com/bombeirosvoluntariosdafigueiradafoz"
+        title="Visitar o nosso Facebook"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+        <Icon name="ion:logo-facebook" />
+      </a>
     </li>
     <li class="menu-item type-icon">
       <a
-        href="https://github.com/markteekman/accessible-astro-starter"
-        title="Go to the GitHub page"
+        href="https://www.instagram.com/bvfigueiradafoz"
+        title="Visitar o nosso Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <Icon name="ion:logo-facebook" />
+        <Icon name="ion:logo-instagram" />
       </a>
     </li>
   </Navigation>
@@ -49,25 +68,17 @@ import { Icon } from "astro-icon/components";
   @use "../assets/scss/base/outline" as *;
 
   .floating-header {
-    position: fixed; /* Keeps the header at the top of the viewport */
+    position: sticky; /* Keeps the header at the top of the viewport */
     top: 0;
-    left: 50%;
-    transform: translateX(-50%); /* Center the header horizontally */
-    width: 100%; /* Ensures the header spans the full width */
+    width: 100vw; /* Ensures the header spans the full width */
     z-index: 1000; /* Keeps the header above other elements */
     background-color: #161618e1; /* Light semi-transparent background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
-    backdrop-filter: blur(
-      10px
-    ); /* Optional: modern blur effect for transparency */
-
-    padding: 1rem 2rem; /* Adds space inside the header */
+    backdrop-filter: blur(10px); /* Blur effect for transparency */
+    box-sizing: border-box; /* Ensures padding and borders are included in width calculations */
   }
 
   /* Prevent content overlap */
-  body {
-    padding-top: 80px; /* Adjust this value to match the header's height */
-  }
 
   header .type-icon a {
     display: block;

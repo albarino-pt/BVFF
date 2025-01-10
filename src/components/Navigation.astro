@@ -49,12 +49,12 @@ import logo from "../assets/img/brasão.svg";
         menuItems.forEach((menuItem) => {
           if (
             currenPathname.includes(menuItem.pathname.replaceAll("/", "")) &&
-            menuItem.textContent !== "Home"
+            menuItem.textContent !== "Início"
           ) {
             menuItem.classList.add("is-active");
             menuItem.setAttribute("aria-current", "page");
           } else if (
-            menuItem.textContent === "Home" &&
+            menuItem.textContent === "Início" &&
             currenPathname === "/"
           ) {
             menuItem.classList.add("is-active");

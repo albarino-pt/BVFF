@@ -4,19 +4,47 @@ import Hero from "../components/Hero.astro";
 import Feature from "../components/Feature.astro";
 import Counter from "../components/Counter.astro";
 import ContentMedia from "../components/ContentMedia.astro";
+import Latest from "../components/latest.astro";
 import { Accordion, AccordionItem } from "accessible-astro-components";
+
+import { Icon } from "astro-icon/components";
+import { Notification } from "accessible-astro-components";
+
+const emergencias = "1043";
+const kmperco = "52145";
+const qab = "104";
+const age = "142";
+
+// Notification visibility
+let isVisible = false; // Change to `false` to hide the notification
 ---
 
-<DefaultLayout title="Home">
+<DefaultLayout title="Início" class="snap-y">
+  <div class="floating-notification">
+    {
+      isVisible && (
+        <Notification type="info">
+          <Icon name="ion:information-circle-outline" />
+          <p>
+            <strong>Última hora:</strong> Bombeiros fazem parto ao Km 13.4 da
+            A14
+            <a href="https://www.facebook.com/photo.php?fbid=1040480794786802&set=a.465417892293098&type=3&ref=embed_page">
+              Saiba mais
+            </a>
+          </p>
+        </Notification>
+      )
+    }
+  </div>
   <Hero />
-  <section class="mb-32 mt-64">
+  <section class="mb-32 mt-64 snap-center">
     <div class="container">
-      <h2 class="mb-16 text-5xl">Bvff em números</h2>
-      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="1043" title="Emergências" sub="em 2025" />
-        <Counter count="52145" title="Km" sub="percorridos" />
-        <Counter count="104" title="Bombeiros" sub="no quadro ativo" />
-        <Counter count="142" title="Anos" sub="de história" />
+      <h2 class="mb-16 text-5xl">BVFF em números</h2>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <Counter count={emergencias} title="Emergências" sub="em 2025" />
+        <Counter count={kmperco} title="Km" sub="percorridos" />
+        <Counter count={qab} title="Bombeiros" sub="no quadro ativo" />
+        <Counter count={age} title="Anos" sub="de história" />
       </div>
     </div>
   </section>
@@ -24,7 +52,7 @@ import { Accordion, AccordionItem } from "accessible-astro-components";
     <div class="container">
       <h2 class="mb-16 text-6xl">Features</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:tailwind" title="Tailwind CSS">
+        <Feature icon="mdi:wheelchair" title="Tailwind CSS">
           Use the power of Tailwind to greatly improve your productivity and
           enhance your developer workflow.
         </Feature>
@@ -32,19 +60,18 @@ import { Accordion, AccordionItem } from "accessible-astro-components";
           17 components and counting, all tried and tested for the most optimal
           accessible experience for your visitors.
         </Feature>
-        <Feature icon="mdi:looks" title="Prettier">
+        <Feature icon="mdi:bed" title="Transportes de  acamados">
           Less worry about formatting your code, let the Astro Prettier
           integration do the heavy lifting.
         </Feature>
-        <Feature icon="mdi:eslint" title="ESLint">
-          Lint your code with strict a11y settings to ensure you stay on track
-          with the WCAG standards.
+        <Feature icon="mdi:ambulance" title="Pré Hospitalar">
+          Garantimos o socorro á população quando mais precisa.
         </Feature>
-        <Feature icon="mdi:book-open-page-variant" title="Blog">
+        <Feature icon="mdi:fire-truck" title="Blog">
           This theme comes with a fully integrated blog, dynamic pages and SEO
           optimization.
         </Feature>
-        <Feature icon="mdi:language-markdown" title="Markdown & MDX">
+        <Feature icon="mdi:fire-station" title="Markdown & MDX">
           Easily use .md and .mdx pages to build your websites or use it with
           Netlify CMS.
         </Feature>
@@ -63,28 +90,36 @@ import { Accordion, AccordionItem } from "accessible-astro-components";
       </div>
     </div>
   </section>
-  <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible Components</h2>
+  <ContentMedia imgSrc="/MARCHA.jpg">
+    <h2>Corpo Ativo</h2>
     <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro
-      Components. Some are native to this theme and a lot of others are
-      integrated using a <a
-        href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. They'll get you up and running in building an accessible solution for
-      your visitors.
+      Queres fazer parte desta grande familia que são os Bombeiros Voluntários
+      da Figueira da foz? Tens aptidão física e psíquica?
+      <a href="/recrutamento">Aqui</a>
+      podes saber mais sobre como te juntar a nós.
     </p>
   </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.2 AA Compliant</h2>
+  <ContentMedia imgSrc="/INFANTES.jpg" reverseImg={true}>
+    <h2>Infantes e Cadetes</h2>
     <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly
-      content, aria-labels, keyboard accessible navigation and components, clear
-      outlines and tab indicators and the right color contrast, you're more
-      certain of reaching WCAG AA compliance.
+      Ainda não tens idade para entrar na escola de estagiários mas queres
+      começar a fazer o caminho para ser bomeiro?
+      <a href="/recrutamento">Aqui</a>
+      podes saber mais sobre começar esse caminho.
     </p>
   </ContentMedia>
-  <section class="my-64">
+  <ContentMedia imgSrc="/FANFARRA.jpg">
+    <h2>Fanfarra</h2>
+    <p class="text-2xl">
+      A fanfarra dos bombeiros voluntários da Figueira da Foz conta com mais de
+      x anos de história. Clica
+      <a href="/recrutamento">aqui</a>
+      podes saber mais sobre como podes fazer parte dela.
+    </p>
+  </ContentMedia>
+
+  <Latest />
+  <section class="my-60">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
       <div class="flex flex-col items-start gap-4">
         <h2 class="text-6xl">FAQ</h2>
@@ -171,3 +206,25 @@ import { Accordion, AccordionItem } from "accessible-astro-components";
     </div>
   </section>
 </DefaultLayout>
+
+<style lang="scss" is:global>
+  .floating-notification {
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    // background-color: #161618e1;
+    // padding: 1rem;
+    // border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 25%;
+  }
+
+  @media (max-width: 768px) {
+    .floating-notification {
+      bottom: 0.5rem;
+      right: 0.5rem;
+      max-width: 90%;
+    }
+  }
+</style>
