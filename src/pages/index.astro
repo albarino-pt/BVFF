@@ -10,10 +10,7 @@ import { Accordion, AccordionItem } from "accessible-astro-components";
 import { Icon } from "astro-icon/components";
 import { Notification } from "accessible-astro-components";
 
-const emergencias = "1043";
-const kmperco = "52145";
-const qab = "104";
-const age = "142";
+import { emergencias, kmperco, qab, age } from "../vars";
 
 // Notification visibility
 let isVisible = false; // Change to `false` to hide the notification
@@ -52,40 +49,34 @@ let isVisible = false; // Change to `false` to hide the notification
     <div class="container">
       <h2 class="mb-16 text-6xl">Features</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:wheelchair" title="Tailwind CSS">
-          Use the power of Tailwind to greatly improve your productivity and
-          enhance your developer workflow.
+        <Feature icon="mdi:wheelchair" title="Transportes">
+          Transportes para consultas, tratamentos, altas hospitalares, e lazer
         </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="a11y Components">
-          17 components and counting, all tried and tested for the most optimal
-          accessible experience for your visitors.
+        <Feature icon="mdi:wheelchair-accessibility" title="Cadeiras de rodas">
+          Dispomos de cadeiras de rodas complementares para o caso de não
+          possuir uma para o seu transporte.
         </Feature>
         <Feature icon="mdi:bed" title="Transportes de  acamados">
-          Less worry about formatting your code, let the Astro Prettier
-          integration do the heavy lifting.
+          Transportes para consultas, tratamentos e altas hospitalares.
         </Feature>
         <Feature icon="mdi:ambulance" title="Pré Hospitalar">
           Garantimos o socorro á população quando mais precisa.
         </Feature>
-        <Feature icon="mdi:fire-truck" title="Blog">
-          This theme comes with a fully integrated blog, dynamic pages and SEO
-          optimization.
+        <Feature icon="mdi:fire-truck" title="Socorro">
+          Temos uma vasta diversidade operacional.
         </Feature>
-        <Feature icon="mdi:fire-station" title="Markdown & MDX">
-          Easily use .md and .mdx pages to build your websites or use it with
-          Netlify CMS.
+        <Feature icon="mdi:fire-station" title="Quartel">
+          Temos um Quartel Sede e uma Secção destacada para permitir um melhor
+          tempo de resposta.
         </Feature>
-        <Feature icon="mdi:theme-light-dark" title="Dark mode">
-          Fully integrated Dark mode gives your users the choice for their
-          favorite viewing mode.
+        <Feature icon="mdi:theme-light-dark" title="Horário">
+          Garantimos o socorro 24h por dia 7 dias por semana o ano inteiro.
         </Feature>
-        <Feature icon="mdi:cog" title="Design System">
-          The theme offers some very handy utilities to help you build your
-          website faster.
+        <Feature icon="mdi:account-group" title={`Somos ${qab}`}>
+          A nossa família já conta com {qab} bombeiros.
         </Feature>
-        <Feature icon="mdi:lighthouse" title="Lighthouse Scores">
-          Excellent lighthouse scores means your website will load faster and
-          get better SEO rankings.
+        <Feature icon="mdi:car-emergency" title="Lighthouse Scores">
+          Contamos com 25 viaturas para nos ajudar no socorr.
         </Feature>
       </div>
     </div>
@@ -93,7 +84,7 @@ let isVisible = false; // Change to `false` to hide the notification
   <ContentMedia imgSrc="/MARCHA.jpg">
     <h2>Corpo Ativo</h2>
     <p class="text-2xl">
-      Queres fazer parte desta grande familia que são os Bombeiros Voluntários
+      Queres fazer parte desta grande família que são os Bombeiros Voluntários
       da Figueira da foz? Tens aptidão física e psíquica?
       <a href="/recrutamento">Aqui</a>
       podes saber mais sobre como te juntar a nós.

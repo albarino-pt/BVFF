@@ -1,156 +1,339 @@
 [
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "1",
     "title": "ABSC-01",
-    "body": "Ambulância de Socorro - 01 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
     "image": "/viaturas/ABSC-01.jpg",
     "image1": "/viaturas/ABSC-01-1.jpg"
   },
-  
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "2",
+    "title": "ABSC-02",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
+    "image": "/viaturas/ABSC-02.jpg",
+    "image1": "/viaturas/ABSC-02-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "3",
+    "title": "ABSC-03",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
+    "image": "/viaturas/ABSC-03.jpg",
+    "image1": "/viaturas/ABSC-03-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "4",
     "title": "ABSC-04",
-    "body": "Ambulância de Socorro - 04 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
     "image": "/viaturas/ABSC-04.jpg",
-    "image1": "/viaturas/ABSC-04-b.jpg"
+    "image1": "/viaturas/ABSC-04-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "5",
     "title": "ABSC-05",
-    "body": "Ambulância de Socorro - 05 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
     "image": "/viaturas/ABSC-05.jpg",
-    "image1": "/viaturas/ABSC-05-b.jpg"
+    "image1": "/viaturas/ABSC-05-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "6",
     "title": "ABSC-06",
-    "body": "Ambulância de Socorro - 06 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
     "image": "/viaturas/ABSC-06.jpg",
-    "image1": "/viaturas/ABSC-06-b.jpg"
+    "image1": "/viaturas/ABSC-06-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "7",
     "title": "ABSC-07",
-    "body": "Ambulância de Socorro - 07 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
     "image": "/viaturas/ABSC-07.jpg",
-    "image1": "/viaturas/ABSC-07-b.jpg"
+    "image1": "/viaturas/ABSC-07-1.jpg"
   },
-  
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "8",
+    "title": "ABSC-08",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
+    "image": "/viaturas/ABSC-08.jpg",
+    "image1": "/viaturas/ABSC-08-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "9",
     "title": "ABSC-09",
-    "body": "Ambulância de Socorro - 09 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
     "image": "/viaturas/ABSC-09.jpg",
-    "image1": "/viaturas/ABSC-09-b.jpg"
+    "image1": "/viaturas/ABSC-09-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "10",
     "title": "ABSC-10",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Ambulância de socorro equipada para transporte de doentes em situações de emergência, com suporte básico de vida e materiais médicos essenciais.",
     "image": "/viaturas/ABSC-10.jpg",
-    "image1": "/viaturas/ABSC-10-b.jpg"
+    "image1": "/viaturas/ABSC-10-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "11",
+    "title": "AE-MUSEU",
+    "body": "Veículo especializado para transporte de materiais e pessoal para eventos culturais em museus.",
+    "image": "/viaturas/AE-MUSEU.jpg",
+    "image1": "/viaturas/AE-MUSEU-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "12",
+    "title": "APS-3",
+    "body": "Veículo projetado para transporte de animais, possivelmente utilizado por serviços veterinários ou de resgate animal.",
+    "image": "/viaturas/APS-3.jpg",
+    "image1": "/viaturas/APS-3-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "13",
+    "title": "APS-9",
+    "body": "Veículo de comando e operações táticas, utilizado para coordenar operações em situações de emergência.",
+    "image": "/viaturas/APS-9.jpg",
+    "image1": "/viaturas/APS-9-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "14",
+    "title": "PETMOBILE",
+    "body": "Veículo de comando e operações táticas, utilizado para coordenar operações em situações de emergência.",
+    "image": "/viaturas/PETMOBILE.jpg",
+    "image1": "/viaturas/PETMOBILE-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "15",
+    "title": "VCOT-01",
+    "body": "Veículo de transporte de doentes, projetado para fornecer suporte médico e transporte de pacientes em emergências.",
+    "image": "/viaturas/VCOT-01.jpg",
+    "image1": "/viaturas/VCOT-01-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "16",
+    "title": "VCOT-MUSEU",
+    "body": "Veículo de transporte de doentes, projetado para fornecer suporte médico e transporte de pacientes em emergências.",
+    "image": "/viaturas/VCOT-MUSEU.jpg",
+    "image1": "/viaturas/VCOT-MUSEU-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "20",
+    "title": "VDTD-10",
+    "body": "Veículo de resgate e combate a incêndios equipado com uma escada articulada de 30 metros, projetada para acesso a áreas elevadas em situações de emergência. Utilizado para resgatar vítimas em andares altos e realizar operações de combate a incêndios em edifícios de grande altura. Equipado com sistemas de bombeamento de água e ferramentas de resgate, é essencial em cenários urbanos com construções elevadas.",
+    "image": "/viaturas/VDTD-10.jpg",
+    "image1": "/viaturas/VDTD-10-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "17",
     "title": "VDTD-11",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Veículo de transporte de doentes, projetado para fornecer suporte médico e transporte de pacientes em emergências.",
     "image": "/viaturas/VDTD-11.jpg",
-    "image1": "/viaturas/VDTD-11-b.jpg"
+    "image1": "/viaturas/VDTD-11-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "18",
     "title": "VDTD-12",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Veículo de transporte de doentes, projetado para fornecer suporte médico e transporte de pacientes em emergências.",
     "image": "/viaturas/VDTD-12.jpg",
-    "image1": "/viaturas/VDTD-12-b.jpg"
+    "image1": "/viaturas/VDTD-12-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "19",
     "title": "VDTD-13",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Veículo de transporte de doentes, projetado para fornecer suporte médico e transporte de pacientes em emergências.",
     "image": "/viaturas/VDTD-13.jpg",
-    "image1": "/viaturas/VDTD-13-b.jpg"
+    "image1": "/viaturas/VDTD-13-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
-    "title": "VDTD-14",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
-    "image": "/viaturas/VDTD-14.jpg",
-    "image1": "/viaturas/VDTD-14-b.jpg"
+    "updated": "11-01-2025",
+    "id": "22",
+    "title": "VE30",
+    "body": "Veículo especializado em fornecer suporte técnico em operações de emergência, equipado com ferramentas, equipamentos e materiais para assistências variadas, como reparos, manutenção e resgates. Usado para apoio logístico em situações de combate a incêndios, resgates e outras intervenções, garantindo a operação contínua das equipes de emergência e a disponibilidade de recursos essenciais em locais de difícil acesso.",
+    "image": "/viaturas/VE30.jpg",
+    "image1": "/viaturas/VE30-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
-    "title": "VDTD-15",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
-    "image": "/viaturas/VDTD-15.jpg",
-    "image1": "/viaturas/VDTD-15-b.jpg"
-  },
-  {
-    "updated": "09-01-2025",
-    "id": 1,
-    "title": "VOPE-01",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
-    "image": "/viaturas/VOPE-01.jpg",
-    "image1": "/viaturas/VOPE-01-b.jpg"
-  },
-  {
-    "updated": "09-01-2025",
-    "id": 1,
-    "title": "VOPE-02",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
-    "image": "/viaturas/VOPE-02.jpg",
-    "image1": "/viaturas/VOPE-02-b.jpg"
-  },
-  {
-    "updated": "09-01-2025",
-    "id": 1,
-    "title": "VOPE-03",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
-    "image": "/viaturas/VOPE-03.jpg",
-    "image1": "/viaturas/VOPE-03-b.jpg"
-  },
-  {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "23",
     "title": "VETA-01",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Veículo especializado em fornecer suporte técnico em operações de emergência, equipado com ferramentas, equipamentos e materiais para assistências variadas, como reparos, manutenção e resgates. Usado para apoio logístico em situações de combate a incêndios, resgates e outras intervenções, garantindo a operação contínua das equipes de emergência e a disponibilidade de recursos essenciais em locais de difícil acesso.",
     "image": "/viaturas/VETA-01.jpg",
-    "image1": "/viaturas/VETA-01-b.jpg"
+    "image1": "/viaturas/VETA-01-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "24",
     "title": "VETA-02",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Veículo de combate a incêndios florestais, equipado com bombas de incêndio e tanque para combate em áreas florestais.",
     "image": "/viaturas/VETA-02.jpg",
-    "image1": "/viaturas/VETA-02-b.jpg"
+    "image1": "/viaturas/VETA-02-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
+    "updated": "11-01-2025",
+    "id": "25",
     "title": "VETA-03",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
+    "body": "Veículo de combate a incêndios florestais, equipado com bombas de incêndio e tanque para combate em áreas florestais.",
     "image": "/viaturas/VETA-03.jpg",
-    "image1": "/viaturas/VETA-03-b.jpg"
+    "image1": "/viaturas/VETA-03-1.jpg"
   },
   {
-    "updated": "09-01-2025",
-    "id": 1,
-    "title": "VLCI-",
-    "body": "Ambulância de Socorro - 02 aquirida no ano xxxx batizada de ambulancia blablabla",
-    "image": "/viaturas/VLCI-.jpg",
-    "image1": "/viaturas/VLCI--b.jpg"
+    "updated": "11-01-2025",
+    "id": "26",
+    "title": "VFCI-02",
+    "body": "Veículo de combate a incêndios de menor porte, projetado para intervenções rápidas em áreas urbanas e rurais. Equipado com sistemas de extinção de incêndios, como bombas e reservatórios de água, além de ferramentas de resgate e primeiros socorros. Ideal para atuar em incêndios iniciais e situações de emergência, sendo ágil e versátil para acessar áreas de difícil acesso e proporcionar resposta imediata a incêndios de menor escala.",
+    "image": "/viaturas/VFCI-02.jpg",
+    "image1": "/viaturas/VFCI-02-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "26",
+    "title": "VFCI-13",
+    "body": "Veículo de combate a incêndios de menor porte, projetado para intervenções rápidas em áreas urbanas e rurais. Equipado com sistemas de extinção de incêndios, como bombas e reservatórios de água, além de ferramentas de resgate e primeiros socorros. Ideal para atuar em incêndios iniciais e situações de emergência, sendo ágil e versátil para acessar áreas de difícil acesso e proporcionar resposta imediata a incêndios de menor escala.",
+    "image": "/viaturas/VFCI-13.jpg",
+    "image1": "/viaturas/VFCI-13-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "27",
+    "title": "VFCI-15",
+    "body": "Veículo de combate a incêndios de menor porte, projetado para intervenções rápidas em áreas urbanas e rurais. Equipado com sistemas de extinção de incêndios, como bombas e reservatórios de água, além de ferramentas de resgate e primeiros socorros. Ideal para atuar em incêndios iniciais e situações de emergência, sendo ágil e versátil para acessar áreas de difícil acesso e proporcionar resposta imediata a incêndios de menor escala.",
+    "image": "/viaturas/VFCI-15.jpg",
+    "image1": "/viaturas/VFCI-15-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "28",
+    "title": "VLCI-06",
+    "body": "Veículo de combate a incêndios de menor porte, projetado para intervenções rápidas em áreas urbanas e rurais. Equipado com sistemas de extinção de incêndios, como bombas e reservatórios de água, além de ferramentas de resgate e primeiros socorros. Ideal para atuar em incêndios iniciais e situações de emergência, sendo ágil e versátil para acessar áreas de difícil acesso e proporcionar resposta imediata a incêndios de menor escala.",
+    "image": "/viaturas/VLCI-06.jpg",
+    "image1": "/viaturas/VLCI-06-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "29",
+    "title": "VLCI-08-MUSEU",
+    "body": "Veículo de combate a incêndios de menor porte, projetado para intervenções rápidas em áreas urbanas e rurais. Equipado com sistemas de extinção de incêndios, como bombas e reservatórios de água, além de ferramentas de resgate e primeiros socorros. Ideal para atuar em incêndios iniciais e situações de emergência, sendo ágil e versátil para acessar áreas de difícil acesso e proporcionar resposta imediata a incêndios de menor escala.",
+    "image": "/viaturas/VLCI-08-MUSEU.jpg",
+    "image1": "/viaturas/VLCI-08-MUSEU-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "30",
+    "title": "VLCI-13",
+    "body": "Veículo de combate a incêndios de menor porte, projetado para intervenções rápidas em áreas urbanas e rurais. Equipado com sistemas de extinção de incêndios, como bombas e reservatórios de água, além de ferramentas de resgate e primeiros socorros. Ideal para atuar em incêndios iniciais e situações de emergência, sendo ágil e versátil para acessar áreas de difícil acesso e proporcionar resposta imediata a incêndios de menor escala.",
+    "image": "/viaturas/VLCI-13.jpg",
+    "image1": "/viaturas/VLCI-13-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "31",
+    "title": "VLCI-17",
+    "body": "Veículo de combate a incêndios de menor porte, projetado para intervenções rápidas em áreas urbanas e rurais. Equipado com sistemas de extinção de incêndios, como bombas e reservatórios de água, além de ferramentas de resgate e primeiros socorros. Ideal para atuar em incêndios iniciais e situações de emergência, sendo ágil e versátil para acessar áreas de difícil acesso e proporcionar resposta imediata a incêndios de menor escala.",
+    "image": "/viaturas/VLCI-17.jpg",
+    "image1": "/viaturas/VLCI-17-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "32",
+    "title": "VLCI-18",
+    "body": "Veículos adaptados para realizar operações especializadas em situações críticas, como resgates, operações táticas ou intervenções em cenários de alto risco. Equipados com ferramentas e tecnologia avançada, esses veículos são projetados para suportar missões de emergência em diversas condições, oferecendo mobilidade, comunicação e recursos especializados. São usados em uma ampla gama de situações, incluindo desastres naturais, situações de combate a incêndios e resgates em ambientes complexos.",
+    "image": "/viaturas/VLCI-18.jpg",
+    "image1": "/viaturas/VLCI-18-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "33",
+    "title": "VLCI-MUSEU",
+    "body": "Veículos adaptados para realizar operações especializadas em situações críticas, como resgates, operações táticas ou intervenções em cenários de alto risco. Equipados com ferramentas e tecnologia avançada, esses veículos são projetados para suportar missões de emergência em diversas condições, oferecendo mobilidade, comunicação e recursos especializados. São usados em uma ampla gama de situações, incluindo desastres naturais, situações de combate a incêndios e resgates em ambientes complexos.",
+    "image": "/viaturas/VLCI-MUSEU.jpg",
+    "image1": "/viaturas/VLCI-MUSEU-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "34",
+    "title": "VOPE-01",
+    "body": "Veículos adaptados para realizar operações especializadas em situações críticas, como resgates, operações táticas ou intervenções em cenários de alto risco. Equipados com ferramentas e tecnologia avançada, esses veículos são projetados para suportar missões de emergência em diversas condições, oferecendo mobilidade, comunicação e recursos especializados. São usados em uma ampla gama de situações, incluindo desastres naturais, situações de combate a incêndios e resgates em ambientes complexos.",
+    "image": "/viaturas/VOPE-01.jpg",
+    "image1": "/viaturas/VOPE-01-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "35",
+    "title": "VOPE-02",
+    "body": "Veículos adaptados para realizar operações especializadas em situações críticas, como resgates, operações táticas ou intervenções em cenários de alto risco. Equipados com ferramentas e tecnologia avançada, esses veículos são projetados para suportar missões de emergência em diversas condições, oferecendo mobilidade, comunicação e recursos especializados. São usados em uma ampla gama de situações, incluindo desastres naturais, situações de combate a incêndios e resgates em ambientes complexos.",
+    "image": "/viaturas/VOPE-02.jpg",
+    "image1": "/viaturas/VOPE-02-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "36",
+    "title": "VOPE-03",
+    "body": "Veículo especializado no combate a incêndios em áreas rurais, equipado com um grande tanque de água e sistemas de bombeamento para operar em terrenos difíceis e de difícil acesso. Projetado para suportar operações prolongadas de extinção de incêndios em zonas de grande área, como florestas, pastagens e campos. Além de água, pode carregar outros recursos essenciais para operações de resgate, sendo crucial para a contenção e extinção de incêndios em áreas afastadas das zonas urbanas.",
+    "image": "/viaturas/VOPE-03.jpg",
+    "image1": "/viaturas/VOPE-03-1.jpg"
+  },
+
+  {
+    "updated": "11-01-2025",
+    "id": "38",
+    "title": "VRCI-04",
+    "body": "Veículo projetado para o transporte e fornecimento de grandes quantidades de água em operações de combate a incêndios, especialmente em áreas de difícil acesso ou onde o abastecimento de água é limitado. Equipado com um tanque de grande capacidade e sistemas de bombeamento, o VTGC é ideal para apoiar grandes operações de extinção de incêndios em áreas rurais, florestais ou urbanas. Além de água, o veículo pode transportar outros recursos necessários para a operação, garantindo a continuidade do combate ao fogo em longo prazo.",
+    "image": "/viaturas/VRCI-04.jpg",
+    "image1": "/viaturas/VRCI-04-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "39",
+    "title": "VSAT-02",
+    "body": "Veículo destinado ao transporte de equipes de emergência, pessoal de apoio e recursos para o local de intervenção. Projetado para fornecer mobilidade rápida e eficiente em operações de resgate, combate a incêndios ou outras situações de emergência, o VTPG é equipado para acomodar um número significativo de pessoas e seus equipamentos. É utilizado em missões que exigem transporte de pessoal para áreas de difícil acesso, garantindo uma resposta ágil e eficaz em diversos tipos de incidentes.",
+    "image": "/viaturas/VSAT-02.jpg",
+    "image1": "/viaturas/VSAT-02-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "40",
+    "title": "VTGC-01",
+    "body": "Veículo projetado para combater incêndios em áreas urbanas, equipado com sistemas avançados de extinção, como bombas de alta pressão, mangueiras e reservatórios de água. O VUCI é essencial para enfrentar incêndios em edifícios, residências e outras estruturas urbanas, oferecendo também suporte no resgate de vítimas e na proteção de propriedades. Com alta manobrabilidade, é ideal para operar em ruas estreitas e áreas com grande densidade populacional, proporcionando uma resposta rápida e eficaz em emergências.",
+    "image": "/viaturas/VTGC-01.jpg",
+    "image1": "/viaturas/VTGC-01-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "41",
+    "title": "VTPG-01",
+    "body": "Veículo projetado para combater incêndios em áreas urbanas, equipado com sistemas avançados de extinção, como bombas de alta pressão, mangueiras e reservatórios de água. O VUCI é essencial para enfrentar incêndios em edifícios, residências e outras estruturas urbanas, oferecendo também suporte no resgate de vítimas e na proteção de propriedades. Com alta manobrabilidade, é ideal para operar em ruas estreitas e áreas com grande densidade populacional, proporcionando uma resposta rápida e eficaz em emergências.",
+    "image": "/viaturas/VTPG-01.jpg",
+    "image1": "/viaturas/VTPG-01-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "42",
+    "title": "VUCI-07-MUSEU",
+    "body": "Veículo projetado para atuar no combate a incêndios em sua fase inicial, especialmente em áreas urbanas ou rurais. Equipado com sistemas de extinção de incêndio, como bombas de água, mangueiras e reservatórios, o ASP é utilizado para responder rapidamente a focos de incêndio antes que se alastrem. Este veículo também é equipado com ferramentas de resgates rápidos, como escadas e equipamentos de primeiros socorros, permitindo o atendimento e resgate de vítimas em situações de emergência.",
+    "image": "/viaturas/VUCI-07-MUSEU.jpg",
+    "image1": "/viaturas/VUCI-07-MUSEU-1.jpg"
+  },
+  {
+    "updated": "11-01-2025",
+    "id": "43",
+    "title": "VUCI-16",
+    "body": "Veículo projetado para atuar no combate a incêndios em sua fase inicial, especialmente em áreas urbanas ou rurais. Equipado com sistemas de extinção de incêndio, como bombas de água, mangueiras e reservatórios, o ASP é utilizado para responder rapidamente a focos de incêndio antes que se alastrem. Este veículo também é equipado com ferramentas de resgates rápidos, como escadas e equipamentos de primeiros socorros, permitindo o atendimento e resgate de vítimas em situações de emergência.",
+    "image": "/viaturas/VUCI-16.jpg",
+    "image1": "/viaturas/VUCI-16-1.jpg"
   }
 ]

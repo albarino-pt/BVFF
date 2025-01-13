@@ -36,6 +36,17 @@
     }
   }
 
+  &.color-third {
+    background-color: var(--third-100);
+    border-color: (var(--third-100));
+
+    &:hover,
+    &:focus {
+      background-color: var(--third-50);
+    border-color: var(--third-100);
+    }
+  }
+
   &.color-neutral {
     background-color: var(--neutral-500);
     border-color: (var(--neutral-500));
