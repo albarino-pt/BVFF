@@ -7,6 +7,7 @@ import ContentMedia from "../components/ContentMedia.astro";
 import Latest from "../components/latest.astro";
 import { Accordion, AccordionItem } from "accessible-astro-components";
 
+//import for floating notification to work
 import { Icon } from "astro-icon/components";
 import { Notification } from "accessible-astro-components";
 
@@ -75,7 +76,7 @@ let isVisible = false; // Change to `false` to hide the notification
         <Feature icon="mdi:account-group" title={`Somos ${qab}`}>
           A nossa família já conta com {qab} bombeiros.
         </Feature>
-        <Feature icon="mdi:car-emergency" title="Lighthouse Scores">
+        <Feature icon="mdi:car-emergency" title="Viaturas">
           Contamos com 25 viaturas para nos ajudar no socorr.
         </Feature>
       </div>

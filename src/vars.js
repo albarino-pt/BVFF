@@ -14,9 +14,9 @@ export const calculateAge = (birthDate) => {
     return age;
   };
 
-export const birthDate = "1882-12-19"; // Example birthdate (Year-Month-Day)
+export const birthDate = "1882-12-19";      // Birthdate (Year-Month-Day)
 
-export const emergencias = "1043";
-export const kmperco = "52145";
-export const qab = "104";
-export const age = calculateAge(birthDate);
+export const emergencias = "1043";          // Numero total de emergências
+export const kmperco = "52145";             // Kilometros percorridos
+export const qab = "104";                   // Quantidade Atual de Bombeiros
+export const age = calculateAge(birthDate); // Calculated Age
