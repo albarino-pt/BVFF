@@ -3,7 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 
 import DefaultLayout from "../../layouts/DefaultLayout.astro";
-import { Breadcrumbs, BreadcrumbsItem } from "accessible-astro-components";
+import { Breadcrumbs, BreadcrumbsItem , Modal } from "accessible-astro-components";
 
 export async function getStaticPaths() {
   // Read the JSON file from the local filesystem
@@ -40,14 +40,16 @@ const { post } = Astro.props;
           <img
             src={post.image}
             alt={post.title}
-            class="post-image object-cover"
+            id="modal1-trigger"
+            class="post-image object-cover hover:cursor-pointer"
             decoding="async"
             loading="lazy"
           />
           <img
             src={post.image1}
             alt={post.title}
-            class="post-image object-cover"
+            id="modal2-trigger"
+            class="post-image object-cover hover:cursor-pointer"
             decoding="async"
             loading="lazy"
           />
@@ -71,6 +73,26 @@ const { post } = Astro.props;
       <p class="text-2xl">{post.body}</p>
     </div>
   </section>
+  <Modal triggerId="modal1-trigger" title={post.title}>
+    <img
+    src={post.image}
+    alt={post.title}
+    id="modal1-trigger"
+    class="galery-image object-cover"
+    decoding="async"
+    loading="lazy"
+  />
+  </Modal>
+  <Modal triggerId="modal2-trigger" title={post.title}>
+    <img
+    src={post.image1}
+    alt={post.title}
+    id="modal1-trigger"
+    class="galery-image object-cover"
+    decoding="async"
+    loading="lazy"
+  />
+  </Modal>
 </DefaultLayout>
 
 <style lang="scss">
@@ -104,6 +126,13 @@ const { post } = Astro.props;
   .post-image {
     width: 100%;
     max-width: 170px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .galery-image {
+    width: 100%;
+    max-width: 100svw;
     border-radius: 0.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }

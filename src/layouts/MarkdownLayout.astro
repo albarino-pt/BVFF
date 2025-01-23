@@ -1,13 +1,22 @@
 ---
-import DefaultLayout from './DefaultLayout.astro'
+import DefaultLayout from "./DefaultLayout.astro";
 
-const { frontmatter } = Astro.props
+const { frontmatter } = Astro.props;
 ---
 
 <DefaultLayout title={frontmatter.title}>
   <div class="container">
-    <div class="space-content my-12">
+    <div class="space-content my-12 markdown-content">
       <slot />
     </div>
   </div>
+
+  <style>
+    .markdown-content img {
+      border-radius: 500px; /* Change roundness */
+      max-width: 100%; /* Make it responsive */
+      height: auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    }
+  </style>
 </DefaultLayout>
