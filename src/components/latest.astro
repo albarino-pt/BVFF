@@ -1,23 +1,75 @@
 ---
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import ContentMedia from "../components/ContentMedia.astro";
 
+// Get all markdown and mdx files
+const postsDir = path.resolve("src/content/blog");
+const files = fs
+  .readdirSync(postsDir)
+  .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"));
+
+// Read and parse all posts
+const posts = files.map((file) => {
+  const content = fs.readFileSync(path.join(postsDir, file), "utf-8");
+  const { data } = matter(content);
+
+  return {
+    title: data.title,
+    heroImage: data.heroImage,
+    description: data.description,
+    publishDate: new Date(data.pubDate || data.publishDate),
+    status: data.status || "live", // Default to "live" if no status is provided
+    slug: file.replace(/\.(md|mdx)$/, ""),
+  };
+});
+
+// Filter posts based on status and publishDate
+const now = new Date();
+const visiblePosts = posts
+  .filter(
+    (post) => (post.status ?? "live") !== "down" && post.publishDate <= now
+  )
+  .sort((a, b) => b.publishDate - a.publishDate);
+
+// Get the latest post from the filtered and sorted list
+const latestPost = visiblePosts.length > 0 ? visiblePosts[0] : null;
+
+// Debugging (optional, remove in production)
+// console.log("All posts:", posts);
+// console.log("Filtered posts:", visiblePosts);
+// console.log("Latest post:", latestPost);
 ---
 
-<section class="my-64">
-  <div class="container">
-    <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
-      <div class="space-content flex flex-col justify-center">
-        <h2>35º Parto em ambulancia nossa</h2>
-        <p class="text-2xl">
-          Dia 6 de Janeiro, pelas 22h, nasceu um bebê na nossa Ambulância na A14
-          ao Km 13.4 , com o apoio da VMER do HDFF.
-        </p>
-        <slot />
-      </div>
-      <img
-        src="/../latest new.jpg"
-        class="rounded-lg"
-        alt="latest news image"
-      />
-    </div>
-  </div>
-</section>
+{
+  latestPost ? (
+    <ContentMedia imgSrc={latestPost.heroImage}>
+      <h2>{latestPost.title}</h2>
+      <p class="text-2xl">
+        {latestPost.description}
+        <br />
+        <a
+          href={
+            "/noticias/" + latestPost.slug.replaceAll(" ", "-").toLowerCase()
+          }
+        >
+          saiba mais
+        </a>
+      </p>
+    </ContentMedia>
+  ) : (
+    <p>No posts available</p>
+  )
+}
+
+<style>
+  .hero-image-container {
+    position: relative;
+    padding: 5px;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    overflow: hidden;
+  }
+</style>

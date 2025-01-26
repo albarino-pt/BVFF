@@ -12,7 +12,6 @@ export default defineConfig({
 
   // Get this from tina.io
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-  // Get this from tina.io
   token: process.env.TINA_TOKEN,
 
   build: {
@@ -25,21 +24,63 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
       {
         name: "post",
         label: "Posts",
-        path: "src/pages",
+        path: "src/content/blog",  // Ensure this matches your content path
         fields: [
           {
-            type: "string",
+            type: "string",       //Title
             name: "title",
             label: "Title",
             isTitle: true,
             required: true,
           },
+
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            required: true,  // Optional, make it required if needed
+          },
+          
+          {
+            type: "image",
+            name: "heroImage",
+            label: "Hero Image",
+            required: true,  // Optional, depending on your needs
+            ui: {
+              // Optional: Customize the image aspect ratio or preview size in the editor
+              imagePreview: true,
+            },
+          },
+
+          {
+            type: "datetime",   //Time
+            name: "publishDate",
+            label: "Publish Date",
+            required: true,
+            ui: {
+              dateFormat: "YYYY-MM-DD",
+              timeFormat: "HH:mm",
+            },
+          },
+
+          {
+            type: "string",     //Post Status
+            name: "status",
+            label: "Status",
+            options: [
+              { value: "live", label: "Live" },
+              { value: "down", label: "Down" },
+            ],
+            required: true,
+          },
+          
+          
+
           {
             type: "rich-text",
             name: "body",

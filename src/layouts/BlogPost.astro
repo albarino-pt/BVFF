@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+import DefaultLayout from "./DefaultLayout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<DefaultLayout>
+  <div class="container space-content my-12 markdown-content">
+    <div class="hero-image">
+      {heroImage && <img src={heroImage} alt="" />}
+    </div>
+    <div class="prose">
+      <div class="title">
+        <h1>{title}</h1>
+        <hr />
+      </div>
+      <slot />
+    </div>
+  </div>
+</DefaultLayout>
+
+<style lang="scss">
+  .hero-image {
+    // display: flex;
+    margin-top: 48px;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically if needed */
+    width: auto; /* Make the container full width of the viewport */
+    border-radius: 0.75rem;
+    height: 50vh; /* Adjust this value if you need it to take more/less height */
+    overflow: hidden; /* Ensure that the image doesn't overflow */
+    object-fit: cover; /* Make sure the image covers the container while maintaining its aspect ratio */
+  }
+
+  .hero-image img {
+    width: 100%; /* Make the image responsive */
+    height: 50vh; /* Maintain the aspect ratio */
+    object-fit: cover; /* Make sure the image covers the container while maintaining its aspect ratio */
+  }
+</style>

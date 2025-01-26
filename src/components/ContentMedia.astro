@@ -5,7 +5,7 @@ const { imgSrc, reverseImg = false } = Astro.props;
 ---
 
 <section class="my-64">
-  <div class="container">
+  <div class="container hidden sm:block">
     <div class="grid grid-cols-1 gap-24 md:grid-cols-2 justify-center">
       {
         !reverseImg ? (
@@ -24,6 +24,15 @@ const { imgSrc, reverseImg = false } = Astro.props;
           ""
         )
       }
+    </div>
+  </div>
+
+  <div class="container block sm:hidden">
+    <div class="grid grid-cols-1 gap-24 md:grid-cols-2 justify-center">
+      <Media class="rounded-lg h-full object-cover" src={imgSrc} />
+      <div class="space-content flex flex-col justify-center">
+        <slot />
+      </div>
     </div>
   </div>
 </section>

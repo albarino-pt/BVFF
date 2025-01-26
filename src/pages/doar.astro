@@ -1,0 +1,92 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+
+import {
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Card,
+  Media,
+  Modal,
+  Notification,
+  Pagination,
+  Tabs,
+  TabsList,
+  TabsTab,
+  TabsPanel,
+} from "accessible-astro-components";
+---
+
+<DefaultLayout title="Doar">
+  <section class="mt-20">
+    <div class="container">
+      <h1>Como ajudar</h1>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="space-content container">
+      <p class="text-2xl">Saiba como nos pode ajudar</p>
+      <p class="text-xl">Encontre a maneira mais conviniente de ajudar</p>
+
+      <div>
+        <Tabs>
+          <TabsList>
+            <TabsTab id="tab-1" controls="panel-1" selected>Dinheiro</TabsTab>
+            <TabsTab id="tab-2" controls="panel-2">Material</TabsTab>
+            <TabsTab id="tab-3" controls="panel-3">Outro tipo de ajuda</TabsTab>
+          </TabsList>
+
+          <TabsPanel id="panel-1" labelledby="tab-1" selected>
+            <h4>Entidade e referência</h4>
+            <h6>Entidade - 11604</h6>
+            <p>Referência - Montante</p>
+            <p>
+              338 999 945 - 10,00€<br />338 999 952 - 20,00€<br />338 999 973 -
+              50,00€<br />338 999 911 - 100,00€
+            </p>
+
+            <p class="mt-1">
+              Também nos pode ajudar através da Ko-fi. (APENAS METI ESTE PARA
+              EFEITOS DE DEMOSNTRAÇÃO)
+            </p>
+            <h4 class="-mb-2"></h4>
+
+            <div class="flex md:flex-row flex-col w-full gap-1">
+              <iframe
+                id="kofiframe"
+                src="https://ko-fi.com/the_kanlord/?hidefeed=true&widget=true&embed=true&preview=true"
+                style="border:none;width:100%;"
+                height="712"
+                title="the_kanlord"
+              >
+              </iframe>
+            </div>
+          </TabsPanel>
+          <TabsPanel id="panel-2" labelledby="tab-2">
+            <h4></h4>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <Media class="rounded-lg" src="/oferta1.jpg" />
+              <Media class="rounded-lg" src="oferta2.jpg" />
+            </div>
+            <p>
+              Se quiser ajudar os Bombeiros com material por favor ligue <a
+                href="tel:233402260">233 402 260</a
+              > ou envie um email para <a href="mailto:geral@bvff.com.pt"
+                >geral@bvff.com.pt</a
+              >
+            </p>
+          </TabsPanel>
+          <TabsPanel id="panel-3" labelledby="tab-3">
+            <h4>Quer ajudar de outra maneira?</h4>
+            <p>
+              Porfavor ligue <a href="tel:233402260">233 402 260</a> ou envie um
+              email para <a href="mailto:geral@bvff.com.pt">geral@bvff.com.pt</a
+              >
+            </p>
+          </TabsPanel>
+        </Tabs>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
