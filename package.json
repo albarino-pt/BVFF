@@ -5,7 +5,7 @@
   "author": "Mark Teekman",
   "homepage": "https://accessible-astro.netlify.app/",
   "scripts": {
-    "dev": "tinacms dev -c \"astro dev\"",
+    "dev": "tinacms dev -c \"astro dev --host\"",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"

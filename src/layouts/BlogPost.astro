@@ -7,22 +7,50 @@ import DefaultLayout from "./DefaultLayout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, publishDate, updatedDate, heroImage, status } =
+  Astro.props;
+
+const published = new Date(publishDate);
+const now = new Date();
+const isLive = status?.toLowerCase() === "live" && published <= now;
+
+// console.log("status     :", status);
+// console.log("published  :", publishDate);
+// console.log("isLive     :", isLive);
 ---
 
 <DefaultLayout>
-  <div class="container space-content my-12 markdown-content">
-    <div class="hero-image">
-      {heroImage && <img src={heroImage} alt="" />}
-    </div>
-    <div class="prose">
-      <div class="title">
-        <h1>{title}</h1>
-        <hr />
+  {
+    isLive ? (
+      <div class="container space-content my-12 markdown-content">
+        <div class="hero-image">
+          {heroImage && <img src={heroImage} alt="" />}
+        </div>
+        <div class="prose">
+          <div class="title">
+            <h1>{title}</h1>
+            <hr />
+          </div>
+          <slot />
+        </div>
       </div>
-      <slot />
+    ) : (
+    <section class="mt-28">
+    <div class="container">
+      <h1>404</h1>
     </div>
-  </div>
+  </section>
+  <section class="my-12">
+    <div class="space-content container">
+      <p class="text-2xl">
+        Procurou-se por todo o lado <br />mas não foi possivel enocntrar a
+        página que procura
+      </p>
+      <a class="button" href="/">Voltar a página inicial</a>
+    </div>
+  </section>
+    )
+  }
 </DefaultLayout>
 
 <style lang="scss">

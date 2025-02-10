@@ -1,0 +1,79 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import { Icon } from "astro-icon/components";
+import {
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  Card,
+  Media,
+  Modal,
+  Notification,
+  Pagination,
+  Tabs,
+  TabsList,
+  TabsTab,
+  TabsPanel,
+} from "accessible-astro-components";
+---
+
+<DefaultLayout title="Accessible Components">
+  <section class="my-12">
+    <div class="space-content container">
+      <h1>Agendamentos</h1>
+      <p class="text-2xl">
+        Se pretende agendar um serviço pode fazelo atravez das opções abaixo.
+        <br /> Pode também consultar a tabela de preços <a
+          href="/tabela_de_precos">aqui</a
+        >
+      </p>
+    </div>
+  </section>
+  <section class="mb-12 mt-32">
+    <div class="container">
+      <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
+        <div class="space-content">
+          <Card
+            url="acamados"
+            title="Acamados"
+            footer="       "
+            img="../oferta1.jpg"
+          >
+            <p>Agende um transporte acamado</p>
+          </Card>
+        </div>
+        <div class="space-content">
+          <Card
+            url="acamados"
+            title="Sentados/ Cadeira de Rodas"
+            footer="       "
+            img="../oferta1.jpg"
+          >
+            <p>Agende um transporte Sentados ou de Cadeira de Rodas</p>
+          </Card>
+        </div>
+        <div class="space-content">
+          <Card
+            url="acamados"
+            title="Prevenção"
+            footer="       "
+            img="../oferta1.jpg"
+          >
+            <p>Agende uma Prevenção a um evento</p>
+          </Card>
+        </div>
+        <div class="space-content">
+          <Card
+            url="acamados"
+            title="Outros serviços"
+            footer="       "
+            img="../oferta1.jpg"
+          >
+            <p>Agende um outro tipo de serviços</p>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

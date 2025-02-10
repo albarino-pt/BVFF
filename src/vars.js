@@ -19,5 +19,5 @@ export const birthDate = "1882-12-19";      // Birthdate (Year-Month-Day)
 export const emergencias = "1043";          // Numero total de emergências
 export const kmperco = "52145";             // Kilometros percorridos
 export const qab = "104";                   // Quantidade Atual de Bombeiros
-export const viat = "40";                  // Quantidade Atual de Viaturas
+export const viat = "41";                  // Quantidade Atual de Viaturas
 export const age = calculateAge(birthDate); // Calculated Age
