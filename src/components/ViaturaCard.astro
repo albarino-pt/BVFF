@@ -1,0 +1,30 @@
+---
+const { name, plate } = Astro.props;
+---
+
+<label class="block cursor-pointer">
+  <input
+    type="radio"
+    name="viatura"
+    value={name}
+    class="peer hidden"
+    required
+  />
+  <div
+    class="flex aspect-[2/3] w-full max-w-[150px] flex-col justify-between overflow-hidden rounded-md border border-gray-300 peer-checked:border-blue-500 peer-checked:bg-blue-100 sm:max-w-[160px] md:max-w-[180px]"
+  >
+    <div class="relative flex-grow overflow-hidden">
+      <img
+        src={`/viaturas/${name}.jpg`}
+        alt={name}
+        class="absolute inset-0 h-full w-full object-cover object-center"
+      />
+    </div>
+    <div
+      class="flex h-12 flex-col items-center justify-center border-t border-gray-300 text-center text-xs font-medium text-gray-900"
+    >
+      <span>{name}</span>
+      <span class="text-[10px] text-gray-500">{plate}</span>
+    </div>
+  </div>
+</label>

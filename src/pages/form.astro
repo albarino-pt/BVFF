@@ -1,0 +1,565 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import { viaturas } from "../data/viaturas";
+import ViaturaCard from "../components/ViaturaCard.astro";
+---
+
+<DefaultLayout title="Verificação Viaturas">
+  <section class="mt-20">
+    <div class="container">
+      <h1>Verificação Viaturas (mecânica e sinalização)</h1>
+    </div>
+  </section>
+  <section class="my-12">
+    <div class="space-content container">
+      <p class="text-xl">
+        Complete as verificações abaixo para garantir a operabilidade da
+        viatura.
+      </p>
+
+      <div></div>
+      <section class="my-12">
+        <!-- <PageHeader
+      title="Verificação Viaturas (mecânica e sinalização)"
+      subtitle="Complete as verificações abaixo para garantir a operabilidade da viatura."
+      bgType="bordered"
+    /> -->
+      </section>
+
+      <section class="mt-32 mb-12">
+        <form id="checklist-form" class="container space-y-6">
+          <!-- Viatura Info -->
+          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+            <h3 class="text-lg font-semibold">Identificação da Viatura</h3>
+
+            <!-- Número Operacional -->
+            <label class="block text-lg font-semibold text-gray-900"
+              >Número Operacional</label
+            >
+            <input
+              type="number"
+              name="operacional"
+              placeholder="Insira o número operacional"
+              class="w-full rounded-md border p-2"
+              required
+            />
+
+            <!-- Viatura Selection -->
+            <label class="block text-lg font-semibold text-gray-900"
+              >Selecione a viatura</label
+            >
+            <div
+              class="mx-auto grid max-w-screen-lg grid-cols-2 gap-4 px-4 py-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+            >
+              {
+                viaturas.map((v) => (
+                  <ViaturaCard name={v.name} plate={v.plate} />
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- Mecânica -->
+          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+            <h3 class="text-lg font-semibold">Verificação Mecânica</h3>
+
+            <div class="space-y-4">
+              <!-- Óleo -->
+              <div>
+                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                  >Óleo</label
+                >
+                <div class="flex flex-wrap gap-2">
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="oleo"
+                      value="yes"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                    >
+                      Nivel Ok
+                    </div>
+                  </label>
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="oleo"
+                      value="no"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                    >
+                      Nivel baixo
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Água radiador -->
+              <div>
+                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                  >Água radiador</label
+                >
+                <div class="flex flex-wrap gap-2">
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="agua_radiador"
+                      value="yes"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                    >
+                      Nivel Ok
+                    </div>
+                  </label>
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="agua_radiador"
+                      value="no"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                    >
+                      Nivel baixo
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Água limpa vidros -->
+              <div>
+                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                  >Água limpa vidros</label
+                >
+                <div class="flex flex-wrap gap-2">
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="agua_vidros"
+                      value="yes"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                    >
+                      Nivel Ok
+                    </div>
+                  </label>
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="agua_vidros"
+                      value="no"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                    >
+                      Nivel baixo
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Triângulo -->
+              <div>
+                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                  >Triângulo</label
+                >
+                <div class="flex flex-wrap gap-2">
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="triangulo"
+                      value="yes"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                    >
+                      Operacional
+                    </div>
+                  </label>
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="triangulo"
+                      value="no"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                    >
+                      Não Operacional
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Pneus -->
+              <div>
+                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                  >Pneus</label
+                >
+                <div class="flex flex-wrap gap-2">
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="pneus"
+                      value="yes"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                    >
+                      Operacional
+                    </div>
+                  </label>
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="pneus"
+                      value="no"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                    >
+                      Não Operacional
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Colete refletor -->
+              <div>
+                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                  >Colete refletor</label
+                >
+                <div class="flex flex-wrap gap-2">
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="colete"
+                      value="yes"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                    >
+                      Operacional
+                    </div>
+                  </label>
+                  <label
+                    class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                  >
+                    <input
+                      type="radio"
+                      name="colete"
+                      value="no"
+                      class="peer hidden"
+                      required
+                    />
+                    <div
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                    >
+                      Não Operacional
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Combustível -->
+          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+            <label class="mb-2 block text-lg font-semibold text-gray-900"
+              >Combustível</label
+            >
+            <div class="flex flex-wrap gap-2">
+              <!-- Cheio (Green) -->
+              <label class="flex-[1_1_45%] cursor-pointer sm:flex-1">
+                <input
+                  type="radio"
+                  name="combustivel"
+                  value="1"
+                  class="peer hidden"
+                />
+                <div
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                >
+                  Cheio
+                </div>
+              </label>
+
+              <!-- 1/2 (Yellow-green) -->
+              <label class="flex-[1_1_45%] cursor-pointer sm:flex-1">
+                <input
+                  type="radio"
+                  name="combustivel"
+                  value="2"
+                  class="peer hidden"
+                />
+                <div
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-lime-400 peer-checked:text-white"
+                >
+                  1/2
+                </div>
+              </label>
+
+              <!-- Quase cheio (Yellow) -->
+              <label class="flex-[1_1_45%] cursor-pointer sm:flex-1">
+                <input
+                  type="radio"
+                  name="combustivel"
+                  value="4"
+                  class="peer hidden"
+                />
+                <div
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-yellow-400 peer-checked:text-black"
+                >
+                  Quase cheio
+                </div>
+              </label>
+
+              <!-- Quase vazio (Orange) -->
+              <label class="flex-[1_1_45%] cursor-pointer sm:flex-1">
+                <input
+                  type="radio"
+                  name="combustivel"
+                  value="5"
+                  class="peer hidden"
+                />
+                <div
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-orange-500 peer-checked:text-white"
+                >
+                  Quase vazio
+                </div>
+              </label>
+
+              <!-- Vazio (Red) -->
+              <label class="flex-[1_1_45%] cursor-pointer sm:flex-1">
+                <input
+                  type="radio"
+                  name="combustivel"
+                  value="3"
+                  class="peer hidden"
+                />
+                <div
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                >
+                  Vazio
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Km e revisão -->
+          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+            <label for="km_viatura" class="text-lg font-semibold"
+              >Km da Viatura</label
+            >
+            <input
+              type="number"
+              name="km_viatura"
+              placeholder="Informe o KM atual"
+              class="w-full rounded-md border p-2"
+              required
+            />
+
+            <label for="revisao" class="block text-lg font-semibold"
+              >Revisão</label
+            >
+            <input
+              type="number"
+              name="revisao"
+              placeholder="Informe a revisão (se aplicável)"
+              class="w-full rounded-md border p-2"
+            />
+          </div>
+
+          <!-- Luzes -->
+          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+            <h3 class="text-lg font-semibold">Verificação de Luzes</h3>
+
+            <!-- Luzes da Viatura -->
+            <div>
+              <p class="mb-2 font-medium">Luzes da viatura</p>
+              <div class="flex flex-wrap gap-2">
+                <label
+                  class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                >
+                  <input
+                    type="radio"
+                    name="luzes_viatura"
+                    value="yes"
+                    class="peer hidden"
+                    required
+                  />
+                  <div
+                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                  >
+                    Operacional
+                  </div>
+                </label>
+                <label
+                  class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                >
+                  <input
+                    type="radio"
+                    name="luzes_viatura"
+                    value="no"
+                    class="peer hidden"
+                    required
+                  />
+                  <div
+                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                  >
+                    Não Operacional
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Iluminação de Emergência -->
+            <div>
+              <p class="mb-2 font-medium">Iluminação de emergência</p>
+              <div class="flex flex-wrap gap-2">
+                <label
+                  class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                >
+                  <input
+                    type="radio"
+                    name="iluminacao_emergencia"
+                    value="yes"
+                    class="peer hidden"
+                    required
+                  />
+                  <div
+                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                  >
+                    Operacional
+                  </div>
+                </label>
+                <label
+                  class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
+                >
+                  <input
+                    type="radio"
+                    name="iluminacao_emergencia"
+                    value="no"
+                    class="peer hidden"
+                    required
+                  />
+                  <div
+                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                  >
+                    Não Operacional
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Avaria -->
+          <div class="rounded-md bg-white p-4 shadow-sm">
+            <h3 class="text-lg font-semibold">Reportar Avaria</h3>
+            <textarea
+              name="avaria"
+              placeholder="Descreva qualquer avaria..."
+              class="h-32 w-full rounded-md border p-2"></textarea>
+          </div>
+
+          <!-- Botão enviar checklist-->
+          <div class="mt-8 flex justify-center">
+            <button type="submit" class="button color-third">
+              Validar Checklist
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <script type="module">
+        const form = document.getElementById("checklist-form");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const data = new FormData(form);
+
+          const payload = {
+            operacional: Number(data.get("operacional")),
+            viatura: data.get("viatura"),
+            oleo: data.has("oleo"),
+            agua_radiador: data.has("agua_radiador"),
+            agua_vidros: data.has("agua_vidros"),
+            triangulo: data.has("triangulo"),
+            pneus: data.has("pneus"),
+            colete: data.has("colete"),
+            combustivel: Number(data.get("combustivel")),
+            km_viatura: Number(data.get("km_viatura")),
+            revisao: Number(data.get("revisao")),
+            luzes_viatura: data.has("luzes_viatura"),
+            iluminacao_emergencia: data.has("iluminacao_emergencia"),
+            avaria: data.get("avaria") || "",
+          };
+
+          const res = await fetch("/api/checklist", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          const json = await res.json();
+          if (json.success) {
+            alert("Checklist enviado com sucesso!");
+            form.reset();
+          } else {
+            alert("Erro ao enviar checklist.");
+          }
+        });
+      </script>
+    </div>
+  </section></DefaultLayout
+>
