@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "accessible-astro-components": "^3.0.1",
+    "pg": "^8.16.0",
     "tinacms": "^2.6.0"
   }
 }
