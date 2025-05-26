@@ -45,6 +45,18 @@ import ViaturaCard from "../components/ViaturaCard.astro";
               required
             />
 
+            <!-- PIN -->
+            <label class="block text-lg font-semibold text-gray-900"
+              >Código de Autenticação</label
+            >
+            <input
+              type="password"
+              name="pin"
+              placeholder="Código de 4 dígitos"
+              class="w-full rounded-md border p-2"
+              required
+            />
+
             <!-- Viatura Selection -->
             <label class="block text-lg font-semibold text-gray-900"
               >Selecione a viatura</label
@@ -544,10 +556,12 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           e.preventDefault();
           const data = new FormData(form);
 
+          // Valores individuais
           const combustivelValor = Number(data.get("combustivel"));
 
           const payload = {
             operacional: Number(data.get("operacional")),
+            pin: String(data.get("pin") || "").trim(),
             viatura: data.get("viatura"),
             oleo: data.get("oleo") === "true",
             agua_radiador: data.get("agua_radiador") === "true",
@@ -570,10 +584,28 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           });
 
           const json = await res.json();
+
           if (json.success) {
             form.reset();
 
-            // Criação da modal
+            // Criar lista de problemas detetados
+            const problemas = [];
+            if (combustivelValor <= 3)
+              problemas.push("combustível abaixo de 3/4");
+            if (!payload.agua_radiador) problemas.push("água no radiador");
+            if (!payload.agua_vidros) problemas.push("água do limpa-vidros");
+            if (!payload.triangulo) problemas.push("triângulo de sinalização");
+            if (!payload.pneus) problemas.push("pressão/estado dos pneus");
+            if (!payload.colete) problemas.push("colete refletor");
+            if (!payload.luzes_viatura) problemas.push("luzes da viatura");
+            if (!payload.iluminacao_emergencia)
+              problemas.push("iluminação de emergência");
+            if (!payload.oleo) {
+              const tipoOleo = getTipoOleo(payload.viatura);
+              problemas.push(`nível de óleo — usar ${tipoOleo}`);
+            }
+
+            // Criar a modal
             const modal = document.createElement("div");
             modal.style.position = "fixed";
             modal.style.top = "0";
@@ -585,6 +617,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             modal.style.alignItems = "center";
             modal.style.justifyContent = "center";
             modal.style.zIndex = "9999";
+
             const box = document.createElement("div");
             box.style.background = "white";
             box.style.padding = "2rem";
@@ -592,12 +625,12 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             box.style.textAlign = "center";
             box.style.maxWidth = "400px";
 
-            const msg =
-              combustivelValor <= 3
-                ? "Checklist enviado com sucesso, mas atenção: nível de combustível abaixo de 3/4!"
-                : "Checklist enviado com sucesso!";
+            const mensagemBase = "Checklist enviado com sucesso!";
+            const mensagemProblemas = problemas.length
+              ? `<br><strong>Atenção:</strong><ul>${problemas.map((p) => `<li>${p}</li>`).join("")}</ul>`
+              : "";
 
-            box.innerHTML = `<p>${msg}</p><br><button id="fechar-modal">Fechar</button>`;
+            box.innerHTML = `<p>${mensagemBase}${mensagemProblemas}</p><br><button id="fechar-modal">Fechar</button>`;
 
             modal.appendChild(box);
             document.body.appendChild(modal);
@@ -613,5 +646,5 @@ import ViaturaCard from "../components/ViaturaCard.astro";
         });
       </script>
     </div>
-  </section></DefaultLayout
->
+  </section>
+</DefaultLayout>

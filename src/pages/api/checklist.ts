@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro'
 import { Pool } from 'pg'
+import { users } from '../../data/users' // ajusta o caminho se for diferente
 import 'dotenv/config'
 
 export const prerender = false; 
@@ -10,11 +11,22 @@ const pool = new Pool({
     user: process.env.PGUSER,
     password: process.env.PGPASSWORD,
     database: process.env.PGDATABASE,
-  })
+})
 
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json()
+
+    // ✅ Validação simples do operador com PIN
+    const user = users.find(
+      (u) => u.id === Number(data.operacional) && u.pin === String(data.pin).trim()
+    )
+
+    if (!user) {
+      return new Response(JSON.stringify({ success: false, error: 'Credenciais inválidas' }), {
+        status: 401,
+      })
+    }
 
     const query = `
       INSERT INTO vehicle_check (
@@ -40,8 +52,8 @@ export const POST: APIRoute = async ({ request }) => {
       data.combustivel,
       data.km_viatura,
       data.revisao,
-      data.luzes,
-      data.iluminacao,
+      data.luzes_viatura,
+      data.iluminacao_emergencia,
       data.avaria
     ]
 
