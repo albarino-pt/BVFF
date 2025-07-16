@@ -31,7 +31,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
         <form id="checklist-form" class="container space-y-6">
           <!-- Viatura Info -->
           <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
-            <h3 class="text-lg font-semibold">Identificação da Viatura</h3>
+            <h3 class="text-lg font-semibold">Identificação</h3>
 
             <!-- Número Operacional -->
             <label class="block text-lg font-semibold text-gray-900"
@@ -61,6 +61,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             <label class="block text-lg font-semibold text-gray-900"
               >Selecione a viatura</label
             >
+            <input type="hidden" name="viatura" id="viatura-input" />
             <div
               class="mx-auto grid max-w-screen-lg grid-cols-2 gap-4 px-4 py-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
             >
@@ -396,7 +397,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                 <input
                   type="radio"
                   name="combustivel"
-                  value="3"
+                  value="1"
                   class="peer hidden"
                 />
                 <div
@@ -535,7 +536,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
 
       <div
         id="result-modal"
-        class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50"
+        class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/50"
       >
         <div class="max-w-md rounded-lg bg-white p-6 shadow-lg">
           <h2 class="mb-4 text-xl font-bold">Resultado da Verificação</h2>
@@ -549,8 +550,31 @@ import ViaturaCard from "../components/ViaturaCard.astro";
         </div>
       </div>
 
+      <!-- Torna o array viaturas disponível no JS do browser -->
+      <!-- <script>
+        window.viaturas = JSON.parse('{JSON.stringify(viaturas)}');
+      </script> -->
+
       <script type="module">
+        // Função para obter o tipo de óleo da viatura selecionada
+        function getTipoOleo(viaturaName) {
+          const viaturasData = Array.isArray(window.viaturas) ? window.viaturas : [];
+          // Procura por name ou plate
+          const viatura = viaturasData.find(
+            v => v.name === viaturaName || v.plate === viaturaName
+          );
+          return viatura && viatura.oleo ? viatura.oleo : "óleo recomendado";
+        }
+
         const form = document.getElementById("checklist-form");
+        const viaturaInput = document.getElementById("viatura-input");
+        document.querySelectorAll('[data-astro-cid][data-astro-props]').forEach(card => {
+          card.addEventListener('click', () => {
+            const props = JSON.parse(card.getAttribute('data-astro-props'));
+            viaturaInput.value = props.name;
+            // ...highlight...
+          });
+        });
 
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
@@ -562,7 +586,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           const payload = {
             operacional: Number(data.get("operacional")),
             pin: String(data.get("pin") || "").trim(),
-            viatura: data.get("viatura"),
+            viatura: data.get("viatura-input"),
             oleo: data.get("oleo") === "true",
             agua_radiador: data.get("agua_radiador") === "true",
             agua_vidros: data.get("agua_vidros") === "true",
@@ -571,11 +595,16 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             colete: data.get("colete") === "true",
             combustivel: combustivelValor,
             km_viatura: Number(data.get("km_viatura")),
-            revisao: Number(data.get("revisao")),
+            revisao: data.get("revisao") ? Number(data.get("revisao")) : null,
             luzes_viatura: data.get("luzes_viatura") === "true",
             iluminacao_emergencia: data.get("iluminacao_emergencia") === "true",
             avaria: data.get("avaria") || "",
           };
+
+          if (!payload.viatura) {
+            showModal("Por favor, selecione uma viatura.");
+            return;
+          }
 
           const res = await fetch("/api/checklist", {
             method: "POST",
@@ -586,64 +615,42 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           const json = await res.json();
 
           if (json.success) {
-            form.reset();
-
             // Criar lista de problemas detetados
             const problemas = [];
-            if (combustivelValor <= 3)
-              problemas.push("combustível abaixo de 3/4");
+            if (combustivelValor <= 3) problemas.push("combustível abaixo de 3/4");
             if (!payload.agua_radiador) problemas.push("água no radiador");
             if (!payload.agua_vidros) problemas.push("água do limpa-vidros");
             if (!payload.triangulo) problemas.push("triângulo de sinalização");
             if (!payload.pneus) problemas.push("pressão/estado dos pneus");
             if (!payload.colete) problemas.push("colete refletor");
             if (!payload.luzes_viatura) problemas.push("luzes da viatura");
-            if (!payload.iluminacao_emergencia)
-              problemas.push("iluminação de emergência");
+            if (!payload.iluminacao_emergencia) problemas.push("iluminação de emergência");
             if (!payload.oleo) {
               const tipoOleo = getTipoOleo(payload.viatura);
               problemas.push(`nível de óleo — usar ${tipoOleo}`);
-            }
-
-            // Criar a modal
-            const modal = document.createElement("div");
-            modal.style.position = "fixed";
-            modal.style.top = "0";
-            modal.style.left = "0";
-            modal.style.width = "100vw";
-            modal.style.height = "100vh";
-            modal.style.backgroundColor = "rgba(0,0,0,0.5)";
-            modal.style.display = "flex";
-            modal.style.alignItems = "center";
-            modal.style.justifyContent = "center";
-            modal.style.zIndex = "9999";
-
-            const box = document.createElement("div");
-            box.style.background = "white";
-            box.style.padding = "2rem";
-            box.style.borderRadius = "10px";
-            box.style.textAlign = "center";
-            box.style.maxWidth = "400px";
+            };
 
             const mensagemBase = "Checklist enviado com sucesso!";
             const mensagemProblemas = problemas.length
               ? `<br><strong>Atenção:</strong><ul>${problemas.map((p) => `<li>${p}</li>`).join("")}</ul>`
               : "";
 
-            box.innerHTML = `<p>${mensagemBase}${mensagemProblemas}</p><br><button id="fechar-modal">Fechar</button>`;
-
-            modal.appendChild(box);
-            document.body.appendChild(modal);
-
-            document
-              .getElementById("fechar-modal")
-              .addEventListener("click", () => {
-                modal.remove();
-              });
+            showModal(`${mensagemBase}${mensagemProblemas}`);
+            form.reset();
+            // Limpa seleção de viatura
+            document.querySelectorAll('[data-astro-cid][data-astro-props]').forEach(c => c.classList.remove('ring-2', 'ring-blue-500'));
           } else {
-            alert("Erro ao enviar checklist.");
+            showModal(json.error || "Erro ao enviar checklist.");
           }
         });
+
+        // Função para mostrar a modal reutilizável
+        function showModal(html) {
+          const modal = document.getElementById("result-modal");
+          const mensagem = document.getElementById("modal-message");
+          mensagem.innerHTML = html;
+          modal.classList.remove("hidden");
+        }
       </script>
     </div>
   </section>
