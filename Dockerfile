@@ -1,11 +1,14 @@
 # Use the official Bun image as the base
-# See all versions at https://hub.docker.com/r/oven/bun/tags
 FROM oven/bun:1 AS base
 WORKDIR /usr/src/app
 
 # Install dependencies into a temporary directory for caching
 FROM base AS install
-RUN mkdir -p /temp/dev
+
+# 👇 Instala as dependências necessárias para node-gyp
+RUN apt update && apt install -y python3 make g++ && \
+    mkdir -p /temp/dev
+
 COPY package.json bun.lockb /temp/dev/
 RUN cd /temp/dev && bun install --frozen-lockfile || bun install
 
