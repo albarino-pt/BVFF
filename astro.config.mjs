@@ -3,26 +3,25 @@ import mdx from '@astrojs/mdx'
 import tailwind from '@astrojs/tailwind'
 import compress from 'astro-compress'
 import icon from 'astro-icon'
+import node from '@astrojs/node'
 
-// https://astro.build/config
 export default defineConfig({
+  output: 'server',
+  site: 'https://bvff.albarinolab.pt',
+  adapter: node({ mode: 'standalone' }),
   compressHTML: true,
-  site: 'https://cdfutebol.github.io',
+  middleware: true, // <- this line enables Astro middleware
   integrations: [
     mdx(),
     icon(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
+    tailwind({ applyBaseStyles: false }),
     compress(),
   ],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          logger: {
-            warn: () => {},
-          },
+          logger: { warn: () => {} },
         },
       },
     },
