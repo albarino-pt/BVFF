@@ -1,26 +1,31 @@
-# Base image with Bun
-FROM oven/bun:1.1
+# Etapa de build
+FROM oven/bun:1.1 as builder
 
-# Install build tools required for native modules like better-sqlite3
-RUN apt-get update && \
-    apt-get install -y python3 make g++ && \
-    rm -rf /var/lib/apt/lists/*
-
-# Create app directory
 WORKDIR /app
 
-# Install dependencies
-COPY bun.lockb package.json ./
-RUN bun install
-
-# Copy rest of the source
+# Copiar arquivos do projeto
 COPY . .
 
-# Build Astro site
+# Instalar dependências (usa lockfile do bun)
+RUN bun install --frozen-lockfile
+
+# Fazer build do Astro
 RUN bun run build
 
-# Expose port for server
-EXPOSE 4040
 
-# Serve the built static site
-CMD ["bun", "x", "serve", "dist", "--port", "4040"]
+# Etapa de produção
+FROM oven/bun:1.1
+
+WORKDIR /app
+
+# Copiar arquivos da build
+COPY --from=builder /app /app
+
+# Instalar apenas dependências de produção
+RUN bun install --production --frozen-lockfile
+
+# Porta usada pelo servidor (padrão 4321 se usares astro preview/bun serve)
+EXPOSE 4321
+
+# Variáveis de ambiente para TinaCMS
+ENV NODE_ENV=pro_
