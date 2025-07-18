@@ -1,26 +1,26 @@
-# Use official Bun base image
-FROM oven/bun
+# Base image with Bun
+FROM oven/bun:1.1
 
-# Set working dir
+# Install build tools required for native modules like better-sqlite3
+RUN apt-get update && \
+    apt-get install -y python3 make g++ && \
+    rm -rf /var/lib/apt/lists/*
+
+# Create app directory
 WORKDIR /app
 
-# Copy package files and install dependencies
-COPY bun.lockb /app/
-COPY package.json /app/
+# Install dependencies
+COPY bun.lockb package.json ./
 RUN bun install
 
-# Copy all source files
-COPY . /app
+# Copy rest of the source
+COPY . .
 
 # Build Astro site
 RUN bun run build
 
-# Use static file server
-# You can use `serve` (install via bun) or a minimal server
-RUN bun add serve
-
-# Expose port
+# Expose port for server
 EXPOSE 4040
 
-# Serve the static site from dist folder
+# Serve the built static site
 CMD ["bun", "x", "serve", "dist", "--port", "4040"]
