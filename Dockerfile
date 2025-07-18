@@ -1,31 +1,22 @@
-# Etapa de build
-FROM oven/bun:1.1 as builder
+# Etapa 1: build
+FROM node:18 AS builder
 
 WORKDIR /app
 
-# Copiar arquivos do projeto
 COPY . .
 
-# Instalar dependências (usa lockfile do bun)
-RUN bun install --frozen-lockfile
+RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN pnpm install --frozen-lockfile
+RUN pnpm run build
 
-# Fazer build do Astro
-RUN bun run build
-
-
-# Etapa de produção
-FROM oven/bun:1.1
+# Etapa 2: imagem final
+FROM node:18-slim
 
 WORKDIR /app
 
-# Copiar arquivos da build
-COPY --from=builder /app /app
+COPY --from=builder /app .
 
-# Instalar apenas dependências de produção
-RUN bun install --production --frozen-lockfile
-
-# Porta usada pelo servidor (padrão 4321 se usares astro preview/bun serve)
+ENV NODE_ENV=production
 EXPOSE 4321
 
-# Variáveis de ambiente para TinaCMS
-ENV NODE_ENV=pro_
+CMD ["pnpm", "start"]
