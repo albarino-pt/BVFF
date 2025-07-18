@@ -30,12 +30,11 @@ import ViaturaCard from "../components/ViaturaCard.astro";
       <section class="mt-32 mb-12">
         <form id="checklist-form" class="container space-y-6">
           <!-- Viatura Info -->
-          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+          <div class="space-y-4 rounded-md p-4 shadow-sm">
             <h3 class="text-lg font-semibold">Identificação</h3>
 
             <!-- Número Operacional -->
-            <label class="block text-lg font-semibold text-gray-900"
-              >Número Operacional</label
+            <label class="block text-lg font-semibold">Número Operacional</label
             >
             <input
               type="number"
@@ -46,7 +45,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             />
 
             <!-- PIN -->
-            <label class="block text-lg font-semibold text-gray-900"
+            <label class="block text-lg font-semibold"
               >Código de Autenticação</label
             >
             <input
@@ -58,7 +57,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             />
 
             <!-- Viatura Selection -->
-            <label class="block text-lg font-semibold text-gray-900"
+            <label class="block text-lg font-semibold"
               >Selecione a viatura</label
             >
             <input type="hidden" name="viatura" id="viatura-input" />
@@ -74,15 +73,13 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           </div>
 
           <!-- Mecânica -->
-          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+          <div class="space-y-4 rounded-md p-4 shadow-sm">
             <h3 class="text-lg font-semibold">Verificação Mecânica</h3>
 
             <div class="space-y-4">
               <!-- Óleo -->
               <div>
-                <label class="mb-2 block text-lg font-semibold text-gray-900"
-                  >Óleo</label
-                >
+                <label class="mb-2 block text-lg font-semibold">Óleo</label>
                 <div class="flex flex-wrap gap-2">
                   <label
                     class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
@@ -95,7 +92,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                     >
                       Nivel Ok
                     </div>
@@ -111,7 +108,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                     >
                       Nivel baixo
                     </div>
@@ -121,7 +118,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
 
               <!-- Água radiador -->
               <div>
-                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                <label class="mb-2 block text-lg font-semibold"
                   >Água radiador</label
                 >
                 <div class="flex flex-wrap gap-2">
@@ -136,7 +133,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                     >
                       Nivel Ok
                     </div>
@@ -152,7 +149,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                     >
                       Nivel baixo
                     </div>
@@ -162,7 +159,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
 
               <!-- Água limpa vidros -->
               <div>
-                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                <label class="mb-2 block text-lg font-semibold"
                   >Água limpa vidros</label
                 >
                 <div class="flex flex-wrap gap-2">
@@ -177,7 +174,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                     >
                       Nivel Ok
                     </div>
@@ -193,7 +190,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                     >
                       Nivel baixo
                     </div>
@@ -203,8 +200,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
 
               <!-- Triângulo -->
               <div>
-                <label class="mb-2 block text-lg font-semibold text-gray-900"
-                  >Triângulo</label
+                <label class="mb-2 block text-lg font-semibold">Triângulo</label
                 >
                 <div class="flex flex-wrap gap-2">
                   <label
@@ -218,7 +214,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                     >
                       Operacional
                     </div>
@@ -234,7 +230,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                     >
                       Não Operacional
                     </div>
@@ -244,9 +240,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
 
               <!-- Pneus -->
               <div>
-                <label class="mb-2 block text-lg font-semibold text-gray-900"
-                  >Pneus</label
-                >
+                <label class="mb-2 block text-lg font-semibold">Pneus</label>
                 <div class="flex flex-wrap gap-2">
                   <label
                     class="flex flex-[1_1_45%] cursor-pointer items-stretch sm:flex-1"
@@ -259,7 +253,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                     >
                       Operacional
                     </div>
@@ -275,7 +269,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                     >
                       Não Operacional
                     </div>
@@ -285,7 +279,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
 
               <!-- Colete refletor -->
               <div>
-                <label class="mb-2 block text-lg font-semibold text-gray-900"
+                <label class="mb-2 block text-lg font-semibold"
                   >Colete refletor</label
                 >
                 <div class="flex flex-wrap gap-2">
@@ -300,7 +294,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                     >
                       Operacional
                     </div>
@@ -316,7 +310,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                       required
                     />
                     <div
-                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                      class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                     >
                       Não Operacional
                     </div>
@@ -327,10 +321,8 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           </div>
 
           <!-- Combustível -->
-          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
-            <label class="mb-2 block text-lg font-semibold text-gray-900"
-              >Combustível</label
-            >
+          <div class="space-y-4 rounded-md p-4 shadow-sm">
+            <label class="mb-2 block text-lg font-semibold">Combustível</label>
             <div class="flex flex-wrap gap-2">
               <!-- Cheio (Green) -->
               <label class="flex-[1_1_45%] cursor-pointer sm:flex-1">
@@ -341,7 +333,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                   class="peer hidden"
                 />
                 <div
-                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                 >
                   Cheio
                 </div>
@@ -356,7 +348,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                   class="peer hidden"
                 />
                 <div
-                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-lime-400 peer-checked:text-white"
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-lime-400 peer-checked:text-white"
                 >
                   Entre Cheio e 3/4
                 </div>
@@ -371,7 +363,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                   class="peer hidden"
                 />
                 <div
-                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-yellow-400 peer-checked:text-black"
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-yellow-400 peer-checked:text-black"
                 >
                   Entre 3/4 e 1/2
                 </div>
@@ -386,7 +378,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                   class="peer hidden"
                 />
                 <div
-                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-orange-500 peer-checked:text-white"
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-orange-500 peer-checked:text-white"
                 >
                   Entre 1/2 e 1/4
                 </div>
@@ -401,7 +393,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                   class="peer hidden"
                 />
                 <div
-                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                  class="w-full rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                 >
                   Entre 1/4 e vazio
                 </div>
@@ -410,7 +402,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           </div>
 
           <!-- Km e revisão -->
-          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+          <div class="space-y-4 rounded-md p-4 shadow-sm">
             <label for="km_viatura" class="text-lg font-semibold"
               >Km da Viatura</label
             >
@@ -434,7 +426,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           </div>
 
           <!-- Luzes -->
-          <div class="space-y-4 rounded-md bg-white p-4 shadow-sm">
+          <div class="space-y-4 rounded-md p-4 shadow-sm">
             <h3 class="text-lg font-semibold">Verificação de Luzes</h3>
 
             <!-- Luzes da Viatura -->
@@ -452,7 +444,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                     required
                   />
                   <div
-                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                   >
                     Operacional
                   </div>
@@ -468,7 +460,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                     required
                   />
                   <div
-                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                   >
                     Não Operacional
                   </div>
@@ -491,7 +483,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                     required
                   />
                   <div
-                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-green-500 peer-checked:text-white"
+                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
                   >
                     Operacional
                   </div>
@@ -507,7 +499,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                     required
                   />
                   <div
-                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 peer-checked:bg-red-500 peer-checked:text-white"
+                    class="flex w-full items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-red-500 peer-checked:text-white"
                   >
                     Não Operacional
                   </div>
@@ -517,7 +509,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           </div>
 
           <!-- Avaria -->
-          <div class="rounded-md bg-white p-4 shadow-sm">
+          <div class="rounded-md p-4 shadow-sm">
             <h3 class="text-lg font-semibold">Reportar Avaria</h3>
             <textarea
               name="avaria"
@@ -538,7 +530,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
         id="result-modal"
         class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/50"
       >
-        <div class="max-w-md rounded-lg bg-white p-6 shadow-lg">
+        <div class="max-w-md rounded-lg p-6 shadow-lg">
           <h2 class="mb-4 text-xl font-bold">Resultado da Verificação</h2>
           <p id="modal-message" class="mb-4 text-gray-700"></p>
           <button
@@ -558,23 +550,27 @@ import ViaturaCard from "../components/ViaturaCard.astro";
       <script type="module">
         // Função para obter o tipo de óleo da viatura selecionada
         function getTipoOleo(viaturaName) {
-          const viaturasData = Array.isArray(window.viaturas) ? window.viaturas : [];
+          const viaturasData = Array.isArray(window.viaturas)
+            ? window.viaturas
+            : [];
           // Procura por name ou plate
           const viatura = viaturasData.find(
-            v => v.name === viaturaName || v.plate === viaturaName
+            (v) => v.name === viaturaName || v.plate === viaturaName
           );
           return viatura && viatura.oleo ? viatura.oleo : "óleo recomendado";
         }
 
         const form = document.getElementById("checklist-form");
         const viaturaInput = document.getElementById("viatura-input");
-        document.querySelectorAll('[data-astro-cid][data-astro-props]').forEach(card => {
-          card.addEventListener('click', () => {
-            const props = JSON.parse(card.getAttribute('data-astro-props'));
-            viaturaInput.value = props.name;
-            // ...highlight...
+        document
+          .querySelectorAll("[data-astro-cid][data-astro-props]")
+          .forEach((card) => {
+            card.addEventListener("click", () => {
+              const props = JSON.parse(card.getAttribute("data-astro-props"));
+              viaturaInput.value = props.name;
+              // ...highlight...
+            });
           });
-        });
 
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
@@ -617,18 +613,20 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           if (json.success) {
             // Criar lista de problemas detetados
             const problemas = [];
-            if (combustivelValor <= 3) problemas.push("combustível abaixo de 3/4");
+            if (combustivelValor <= 3)
+              problemas.push("combustível abaixo de 3/4");
             if (!payload.agua_radiador) problemas.push("água no radiador");
             if (!payload.agua_vidros) problemas.push("água do limpa-vidros");
             if (!payload.triangulo) problemas.push("triângulo de sinalização");
             if (!payload.pneus) problemas.push("pressão/estado dos pneus");
             if (!payload.colete) problemas.push("colete refletor");
             if (!payload.luzes_viatura) problemas.push("luzes da viatura");
-            if (!payload.iluminacao_emergencia) problemas.push("iluminação de emergência");
+            if (!payload.iluminacao_emergencia)
+              problemas.push("iluminação de emergência");
             if (!payload.oleo) {
               const tipoOleo = getTipoOleo(payload.viatura);
               problemas.push(`nível de óleo — usar ${tipoOleo}`);
-            };
+            }
 
             const mensagemBase = "Checklist enviado com sucesso!";
             const mensagemProblemas = problemas.length
@@ -638,7 +636,9 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             showModal(`${mensagemBase}${mensagemProblemas}`);
             form.reset();
             // Limpa seleção de viatura
-            document.querySelectorAll('[data-astro-cid][data-astro-props]').forEach(c => c.classList.remove('ring-2', 'ring-blue-500'));
+            document
+              .querySelectorAll("[data-astro-cid][data-astro-props]")
+              .forEach((c) => c.classList.remove("ring-2", "ring-blue-500"));
           } else {
             showModal(json.error || "Erro ao enviar checklist.");
           }
