@@ -11,8 +11,7 @@ const { name, plate } = Astro.props;
     required
   />
   <div
-    class="flex aspect-[2/3] w-full max-w-[150px] flex-col justify-between overflow-hidden rounded-md border border-gray-300 peer-checked:border-blue-500 peer-checked:bg-blue-100 sm:max-w-[160px] md:max-w-[180px]"
-  >
+class="flex aspect-[2/3] w-full max-w-[150px] flex-col justify-between overflow-hidden rounded-md border border-gray-300 peer-checked:text-gray-900 peer-checked:border-blue-500 peer-checked:bg-blue-100 sm:max-w-[160px] md:max-w-[180px]"  >
     <div class="relative flex-grow overflow-hidden">
       <img
         src={`/viaturas/${name}.jpg`}
@@ -21,7 +20,8 @@ const { name, plate } = Astro.props;
       />
     </div>
     <div
-      class="flex h-12 flex-col items-center justify-center border-t border-gray-300 text-center text-xs font-medium text-gray-900"
+      class="flex h-12 flex-col items-center justify-center border-t border-gray-300 text-center text-xs font-medium"
+
     >
       <span>{name}</span>
       <span class="text-[10px] text-gray-500">{plate}</span>
