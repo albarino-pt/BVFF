@@ -1,11 +1,6 @@
 [build]
-  command = """
-    curl -fsSL https://bun.sh/install | bash &&
-    export BUN_INSTALL="$HOME/.bun" &&
-    export PATH="$BUN_INSTALL/bin:$PATH" &&
-    bun install --production &&
-    bun run build
-  """
+  command = "npm run build"
+  publish = ".netlify/output" # <-- para SSR
 
 [[redirects]]
   from = "/*"
