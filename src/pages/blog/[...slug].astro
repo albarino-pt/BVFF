@@ -1,0 +1,40 @@
+---
+// src/pages/blog/[slug].astro
+import { getArticle } from "../../lib/strapi";
+import BlogPost from "../../layouts/BlogPost.astro";
+import { marked } from "marked";
+
+const STRAPI_URL = import.meta.env.STRAPI_URL || "https://cms.albarinolab.pt";
+const { slug } = Astro.params;
+
+const article = await getArticle(slug);
+
+if (!article) {
+  return Astro.redirect("/404");
+}
+
+const coverUrl = article.cover
+  ? STRAPI_URL + (article.cover.formats?.medium?.url || article.cover.url)
+  : undefined;
+
+const postData = {
+  title: article.title,
+  description: article.description,
+  publishDate: new Date(article.publishedAt),
+  updatedDate: new Date(article.updatedAt),
+  heroImage: coverUrl,
+  status: "live",
+};
+
+// Convert markdown to HTML
+const markdownContent = article.blocks
+  .filter((block) => block.__component === "shared.rich-text")
+  .map((block) => block.body || "")
+  .join("\n\n");
+
+const htmlContent = marked.parse(markdownContent);
+---
+
+<BlogPost {...postData}>
+  <div set:html={htmlContent} />
+</BlogPost>

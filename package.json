@@ -43,6 +43,7 @@
   "dependencies": {
     "accessible-astro-components": "^3.0.1",
     "gray-matter": "^4.0.3",
+    "marked": "^17.0.1",
     "pg": "^8.17.2"
   }
 }

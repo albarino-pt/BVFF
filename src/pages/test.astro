@@ -1,0 +1,28 @@
+---
+// src/pages/test-article.astro
+import { getArticle } from "../lib/strapi";
+
+const article = await getArticle("banana");
+
+// console.log("Test result:", article);
+---
+
+<html>
+  <head>
+    <title>Test Article Fetch</title>
+  </head>
+  <body>
+    <h1>Testing getArticle('banana')</h1>
+    {
+      article ? (
+        <div>
+          <h2>{article.title}</h2>
+          <p>{article.description}</p>
+          <pre>{JSON.stringify(article, null, 2)}</pre>
+        </div>
+      ) : (
+        <p>No article found!</p>
+      )
+    }
+  </body>
+</html>
