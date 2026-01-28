@@ -10,7 +10,7 @@ export default defineConfig({
   site: 'https://bvff.albarinolab.pt',
   adapter: node({ mode: 'standalone' }),
   compressHTML: true,
-  middleware: true, // <- this line enables Astro middleware
+  middleware: true,
   integrations: [
     mdx(),
     icon(),
@@ -18,6 +18,9 @@ export default defineConfig({
     compress(),
   ],
   vite: {
+    server: {
+      allowedHosts: ['bvff.albarinolab.pt', '.albarinolab.pt'],
+    },
     css: {
       preprocessorOptions: {
         scss: {
