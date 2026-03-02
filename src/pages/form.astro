@@ -18,15 +18,6 @@ import ViaturaCard from "../components/ViaturaCard.astro";
         viatura.
       </p>
 
-      <div></div>
-      <section class="my-12">
-        <!-- <PageHeader
-      title="Verificação Viaturas (mecânica e sinalização)"
-      subtitle="Complete as verificações abaixo para garantir a operabilidade da viatura."
-      bgType="bordered"
-    /> -->
-      </section>
-
       <section class="mt-32 mb-12">
         <form id="checklist-form" class="container space-y-6">
           <!-- Viatura Info -->
@@ -34,10 +25,10 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             <h3 class="text-lg font-semibold">Identificação</h3>
 
             <!-- Número Operacional -->
-            <label class="block text-lg font-semibold">Número Operacional</label
-            >
+            <label for="operacional" class="block text-lg font-semibold">Número Operacional</label>
             <input
               type="number"
+              id="operacional"
               name="operacional"
               placeholder="Insira o número operacional"
               class="w-full rounded-md border p-2"
@@ -45,11 +36,10 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             />
 
             <!-- PIN -->
-            <label class="block text-lg font-semibold"
-              >Código de Autenticação</label
-            >
+            <label for="pin" class="block text-lg font-semibold">Código de Autenticação</label>
             <input
               type="password"
+              id="pin"
               name="pin"
               placeholder="Código de 4 dígitos"
               class="w-full rounded-md border p-2"
@@ -60,7 +50,6 @@ import ViaturaCard from "../components/ViaturaCard.astro";
             <label class="block text-lg font-semibold"
               >Selecione a viatura</label
             >
-            <input type="hidden" name="viatura" id="viatura-input" />
             <div
               class="mx-auto grid max-w-screen-lg grid-cols-2 gap-4 px-4 py-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
             >
@@ -331,6 +320,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
                   name="combustivel"
                   value="5"
                   class="peer hidden"
+                  required
                 />
                 <div
                   class="w-full rounded-md border border-gray-300 px-4 py-2 text-center peer-checked:bg-green-500 peer-checked:text-white"
@@ -412,8 +402,6 @@ import ViaturaCard from "../components/ViaturaCard.astro";
               placeholder="Informe o KM atual"
               class="w-full rounded-md border p-2"
               required
-
-              
             />
 
             <label for="revisao" class="block text-lg font-semibold"
@@ -545,9 +533,9 @@ import ViaturaCard from "../components/ViaturaCard.astro";
       </div>
 
       <!-- Torna o array viaturas disponível no JS do browser -->
-      <!-- <script>
-        window.viaturas = JSON.parse('{JSON.stringify(viaturas)}');
-      </script> -->
+      <script is:inline define:vars={{ viaturas }}>
+        window.viaturas = viaturas;
+      </script>
 
       <script type="module">
         // Função para obter o tipo de óleo da viatura selecionada
@@ -563,16 +551,6 @@ import ViaturaCard from "../components/ViaturaCard.astro";
         }
 
         const form = document.getElementById("checklist-form");
-        const viaturaInput = document.getElementById("viatura-input");
-        document
-          .querySelectorAll("[data-astro-cid][data-astro-props]")
-          .forEach((card) => {
-            card.addEventListener("click", () => {
-              const props = JSON.parse(card.getAttribute("data-astro-props"));
-              viaturaInput.value = props.name;
-              // ...highlight...
-            });
-          });
 
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
@@ -584,7 +562,7 @@ import ViaturaCard from "../components/ViaturaCard.astro";
           const payload = {
             operacional: Number(data.get("operacional")),
             pin: String(data.get("pin") || "").trim(),
-            viatura: data.get("viatura-input"),
+            viatura: data.get("viatura"),
             oleo: data.get("oleo") === "true",
             agua_radiador: data.get("agua_radiador") === "true",
             agua_vidros: data.get("agua_vidros") === "true",
@@ -637,10 +615,6 @@ import ViaturaCard from "../components/ViaturaCard.astro";
 
             showModal(`${mensagemBase}${mensagemProblemas}`);
             form.reset();
-            // Limpa seleção de viatura
-            document
-              .querySelectorAll("[data-astro-cid][data-astro-props]")
-              .forEach((c) => c.classList.remove("ring-2", "ring-blue-500"));
           } else {
             showModal(json.error || "Erro ao enviar checklist.");
           }
